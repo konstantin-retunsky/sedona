@@ -1,0 +1,15 @@
+@import "../../global/scss/mixins.scss";
+@import "../../global/scss/variables.scss";
+
+body {
+  background-color: $white;
+  @include pt-sans($black, 14px, 26px, 400);
+
+  @include media-tablet {
+    @include pt-sans($black, 14px, 26px, 400);
+  }
+
+  @include media-desktop {
+    @include pt-sans($black, 14px, 26px, 400);
+  }
+}
