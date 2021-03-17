@@ -5,10 +5,12 @@ const sourcemaps = require('gulp-sourcemaps')
 const eslint  = require('gulp-eslint')
 const babel = require('gulp-babel')
 const terser = require('gulp-terser')
+const concat = require('gulp-concat')
 const path = require("../pathTasks")
 
 module.exports = function scripts() {
   return  src(path.src.scripts)
+    .pipe(concat('script.js'))
     .pipe(plumber())
     // .pipe(eslint())
     // .pipe(eslint.format())

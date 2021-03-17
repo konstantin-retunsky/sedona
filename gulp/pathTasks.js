@@ -2,7 +2,7 @@
 module.exports = {
   src: {
     styles: ["./source/global/scss/global_style.scss", "./source/pages/**/*.scss"],
-    htmlPug: "./source/pages/**/*.pug",
+    html: "./source/pages/**/*.{njk,html}",
     scripts: "./source/**/*.js",
     images: "./source/**/images/*.{jpg,png,svg}",
     svgSprite: "./source/**/sprite/*.svg",
@@ -10,7 +10,7 @@ module.exports = {
   }, 
   build: {
     styles: "build/css",
-    htmlPug: "build",
+    html: "build",
     scripts: "build/js",
     images: "build/img",
     svgSprite: "build/img",
@@ -18,7 +18,7 @@ module.exports = {
   },
   browserSync: {
     build: "build",
-    pubHtml: "./source/**/*.pug", 
+    html: "./source/**/*.{njk,html}", 
     styles: "./source/**/*.scss",
     images: "./source/**/images/*.{jpg,png,svg}",
     svgSprite: "./source/**/sprite/*.svg",

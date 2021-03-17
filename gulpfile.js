@@ -1,5 +1,5 @@
 const { src, dest, parallel, series, watch } = require('gulp')
-const pugHtml = require('./gulp/tasks/pugHtml')
+const html = require('./gulp/tasks/html')
 const styles = require('./gulp/tasks/styles')
 const scripts = require('./gulp/tasks/scripts')
 const images = require('./gulp/tasks/images')
@@ -7,7 +7,6 @@ const svgSprite = require('./gulp/tasks/svgSprite')
 const fonts = require('./gulp/tasks/fonts')
 const clean = require('./gulp/tasks/clean')
 const fs = require('fs')
-// const lighthouse = require('./gulp/tasks/lighthouse')
 const browserSync = require('./gulp/tasks/browserSync')
 
 
@@ -18,8 +17,9 @@ const setMode = (isProduction = false) => {
   }
 }
 
-const dev = parallel(pugHtml, styles, scripts, fonts, images, svgSprite)
+const dev = parallel(html, styles, scripts, fonts, images, svgSprite)
 const build = series(clean, dev)
+// const build = series(html)
 
 module.exports.dev = 
   fs.existsSync('build')
@@ -27,8 +27,4 @@ module.exports.dev =
     : series(setMode(), dev, browserSync)
 
 module.exports.build = series(setMode(true), build)
-
-// module.exports.lighthouse = gulp.series(lighthouse)
-
-
 
