@@ -1,44 +1,11 @@
-let data = [
-  {
-    "text": "главная"
-  },
-  {
-    "text": "фото и видео"
-  },
-  {
-    "text": "форма отзыва"
-  },
-  {
-    "text": "html academy"
-  },
-]
 
-
-include ../utils/mixins
-
-header.header.header--nav-opened
-	include nav
-	include header-intro
-
-  include ../utils/mixins
-
--
-	let	navList	=	[
-		{text: "Главная", href: "index.html", active: currentPage === "index.html"},
-		{text: "Фотографии", href: "photo.html", active: currentPage === "photo.html"},
-		{text: "Конкурс", href: "contest.html", active: currentPage === "contest.html"},
-		{text: "HTML Academy", href: "htmlacademy.ru", active: currentPage === "htmlacademy.ru"}
-	];
-
-nav.header__nav.nav.nav--opened.nav--nojs
-	div.header__nav-wrapper.container
-		div.nav__logo-wrapper
-			a.nav__logo(href="index.html")
-				+picture("", "img/svg/logo", "svg", "Логотип сайта")
-			div.nav__toggle
-				div.nav__scale
-				span.visually-hidden Открыть меню
-		ul.nav__list
-			each itemNav in navList
-				li.nav__item(class={"nav__item--active": itemNav.active === true})
-					a.nav__link(href=itemNav.href)= itemNav.text
+<header class="header">
+	<a class="header__logo" href="index.html" aria-label="Главная страница сайта">
+		<picture>
+			<source media="(min-width: 1200px)" srcset="img/header-logo-desktop.svg">
+			<source media="(min-width: 768px)" srcset="img/header-logo-tablet.svg">
+			<img src="img/header-logo-mobile.svg" alt="Логотип Седона">
+		</picture>
+	</a>
+	{% include "blocks/page-nav/page-nav.njk" %}
+</header>

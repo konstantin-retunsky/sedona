@@ -1,0 +1,26 @@
+{%
+	set data = [
+		{ "text": "главная",			link: "index.html" },
+		{ "text": "фото и видео", link: "media.html" },
+		{	"text": "форма отзыва",	link: "form.html" },
+		{	"text": "html academy",	link: "htmlacademy.ru" }
+	]
+%}
+
+{# {{data[0].link}} #}
+
+<nav class="page-nav">
+	<button class="page-nav__toggle btn-hamburger" type="button" aria-label="Открыть навигацию">
+		<span></span>
+	</button>
+
+	<ul class="page-nav__list">
+		{% for item in data %}
+			<li class="page-nav__item">
+				<a href="{{ item.link }}">
+					{{ item.text }}	
+				</a>
+			</li>
+		{% endfor %}		
+	</ul>
+</nav>

@@ -1,39 +1,10 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+{% extends "global/page/layout.njk" %}
+{% set title = "Фото и видео Sedona" %}
+{% set classPage = "inner" %}
 
 
-{# {%
-  set items = [
-    { title: "one", id: 5},
-    { title: "two", id: 2}
-  ]
-%}
+{% block content %}
+  <main class="main">
 
-{% for item in items %}
-  <li id="{{ item.id }}">{{ item.title }}</li>
-{% else %}
-  <li>This would display if the 'item' collection were empty</li>
-{% endfor %} #}
-{# 
-{% macro field(name, value='', type='text') %}
-<div class="field">
-  <input type="{{ type }}" name="{{ name }}"
-         value="{{ value | escape }}" />
-</div>
-{% endmacro %}
-
-{{ field('user') }}
-{{ field('pass', type='password') }} #}
-
-
-
-</body>
-</html>
+  </main>
+{% endblock %}

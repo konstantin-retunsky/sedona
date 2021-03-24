@@ -1,22 +1,31 @@
-{% set title = "Sedona главная страница" %}
+{% set title = "Главная страница Sedona" %}
+{% set classPage = "index" %}
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
 	<title>{{ title }}</title>
-	
+
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+
 </head>
-<body>
+
+<body class="{{ classPage }}">
 	<div class="container">
+		{% block header %}
+			{% include "blocks/header/header.njk" %}
+		{% endblock %}
+
 		{% block content %}{% endblock %}
-	</div>	
+
+		{% block footer %}
+			{% include "blocks/footer/footer.njk" %}
+		{% endblock %}
+	</div>
 </body>
 
 
