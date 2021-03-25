@@ -1,28 +1,12 @@
 "use strict";
 
-(function () {
-  var nav = document.querySelector(".main-nav");
-  var menuButton = document.querySelector(".main-nav__button");
-  menuButton.classList.remove("main-nav__button--hidden");
-  nav.classList.remove("main-nav--opened");
-  menuButton.addEventListener("click", function () {
-    var expanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", !expanded);
-
-    if (expanded) {
-      menuButton.classList.add("main-nav__button--closed");
-      menuButton.classList.remove("main-nav__button--opened");
-      nav.classList.add("main-nav--closed");
-      nav.classList.remove("main-nav--opened");
-    } else {
-      menuButton.classList.add("main-nav__button--opened");
-      menuButton.classList.remove("main-nav__button--closed");
-      nav.classList.add("main-nav--opened");
-      nav.classList.remove("main-nav--closed");
-    }
+document.addEventListener("DOMContentLoaded", function (event) {
+  document.querySelectorAll(".burger-ico").forEach(function (burger) {
+    return burger.addEventListener("click", function (eBurger) {
+      this.querySelector("span") ? this.querySelector("span").classList.toggle("burger-ico__active") : false;
+    });
   });
-})();
-
+});
 data = [{
   "text": "Фото и видеоНе можете решиться на путешествие из-за курса?Фотографии помогут вам забыть о политике и экономике."
 }, {

@@ -1,6 +1,7 @@
 @import "../../../node_modules/normalize.css/normalize";
 @import "variables";
 @import "mixins.scss";
+@import "../../blocks/burger-ico/burger-ico.scss";
 
 @include font-face('PT Sans', '../fonts/pt-sans', 400, 'normal');
 @include font-face('PT Sans', '../fonts/pt-sans', 700, 'normal');

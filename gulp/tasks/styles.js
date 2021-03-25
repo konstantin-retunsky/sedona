@@ -5,7 +5,6 @@ const concat = require('gulp-concat')
 const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css')
 const sourcemaps = require('gulp-sourcemaps')
-const shorthand = require('gulp-shorthand')
 const autoprefixer = require('gulp-autoprefixer')
 const path = require('../pathTasks')
 
@@ -17,7 +16,6 @@ module.exports = function sytle(cb) {
     .pipe(autoprefixer({
       cascade: false
     }))
-    .pipe(shorthand())
     .pipe(rename({dirname: ''}))
     .pipe(concat('style.css'))
     .pipe(sourcemaps.write())

@@ -1,3 +1,5 @@
+{% import "blocks/burger-ico/burger-ico.njk" as burgerIcon %}
+
 {%
 	set data = [
 		{ "text": "главная",			link: "index.html" },
@@ -7,12 +9,10 @@
 	]
 %}
 
-{# {{data[0].link}} #}
-
 <nav class="page-nav">
-	<button class="page-nav__toggle btn-hamburger" type="button" aria-label="Открыть навигацию">
-		<span></span>
-	</button>
+
+	{{ burgerIcon.value('nav_toggle') }}
+
 
 	<ul class="page-nav__list">
 		{% for item in data %}
