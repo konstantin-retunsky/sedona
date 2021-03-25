@@ -1,3 +1,9 @@
+@import "../../global/scss/variables.scss";
+@import "../../global/scss/mixins.scss";
+
+.page-nav {
+	// @include pt-sans($white, $fs-21, $lh-26, $fw-700);
+}
 
 .nav_toggle span::after, 
 .nav_toggle span::before,

@@ -47,14 +47,14 @@ $rotate: -180;
 	}
 }
 
-.burger-ico .burger-ico__active {
+.burger-ico .burger-ico--active {
 	background-color: transparent;
 	transition:
 		background 0ms 250ms;
 }
 
-.burger-ico .burger-ico__active::after,
-.burger-ico .burger-ico__active::before {
+.burger-ico .burger-ico--active::after,
+.burger-ico .burger-ico--active::before {
 	top: 0;
 	left: 0;
 	transition:
@@ -62,10 +62,10 @@ $rotate: -180;
 		transform 0.5s 300ms;
 }
 
-.burger-ico .burger-ico__active::before {
+.burger-ico .burger-ico--active::before {
 	transform: rotate($rotate - 45deg);
 }
 
-.burger-ico .burger-ico__active::after {
+.burger-ico .burger-ico--active::after {
 	transform: rotate($rotate - 135deg);
 }

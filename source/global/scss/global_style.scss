@@ -1,7 +1,9 @@
 @import "../../../node_modules/normalize.css/normalize";
 @import "variables";
 @import "mixins.scss";
+
 @import "../../blocks/burger-ico/burger-ico.scss";
+@import "../../blocks/button/button.scss";
 
 @include font-face('PT Sans', '../fonts/pt-sans', 400, 'normal');
 @include font-face('PT Sans', '../fonts/pt-sans', 700, 'normal');
@@ -11,6 +13,7 @@ body {
   font-style: normal;
   min-width: 320px;
   background-color: $concrete;
+  text-transform: uppercase;
   mix-blend-mode: normal;
 }
 
@@ -24,15 +27,6 @@ a {
   max-width: 1200px;
   background-color: $white;
   box-shadow: 0px 5px 15px rgba($swamp, 0.2);
-}
-
-.button {
-  &:hover,
-  &:focus {
-  }
-
-  &:active {
-  }
 }
 
 .visually-hidden:not(:focus):not(:active),

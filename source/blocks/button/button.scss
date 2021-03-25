@@ -1,0 +1,30 @@
+@import "../../global/scss/variables.scss";
+@import "../../global/scss/mixins.scss";
+
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 18px 0;
+  margin: 0;
+	@include pt-sans($white, $fs-21, $lh-26, $fw-700);
+  text-align: center;
+  background-color: $half-baked;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $fountain-blue;
+  }
+
+  &:active {
+    background-color: $steel-blue;
+    color: rgba($white, 0.3);
+  }
+
+  &[disabled],
+  &:disabled {
+    background-color: $mercury-5;
+    color: rgba($white, 0.3);
+  }
+}

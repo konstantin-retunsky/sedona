@@ -1,4 +1,5 @@
 {% import "blocks/burger-ico/burger-ico.njk" as burgerIcon %}
+{% import "blocks/button/button.njk" as button %}
 
 {%
 	set data = [
@@ -11,15 +12,12 @@
 
 <nav class="page-nav">
 
-	{{ burgerIcon.value('nav_toggle') }}
-
+	{{ burgerIcon.value('page-nav__toggle') }}
 
 	<ul class="page-nav__list">
 		{% for item in data %}
 			<li class="page-nav__item">
-				<a href="{{ item.link }}">
-					{{ item.text }}	
-				</a>
+				{{ button.value("a", item.text, "", item.link) }}
 			</li>
 		{% endfor %}		
 	</ul>

@@ -1,0 +1,14 @@
+
+{% macro value(type = 'button', text = '', className = '', hrefLink = '', ariaLabel = '') %}
+  {% if type == 'button' %}
+    <button class="button {{ className }}" aria-label="{{ ariaLabel }}">
+      {{ text }}
+    </button>
+  {% elif type == 'input' %}
+    <input class="button {{ className }}" type="button" aria-label="{{ ariaLabel }}" value="{{ text }}">
+  {% elseif type == 'a' %}
+    <a class="button {{ className }}" href="{{ hrefLink }}">
+      {{ text }}
+    </a>
+  {% endif %}
+{% endmacro %}
