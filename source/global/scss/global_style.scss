@@ -4,6 +4,7 @@
 
 @import "../../blocks/burger-ico/burger-ico.scss";
 @import "../../blocks/button/button.scss";
+@import "../../blocks/intro/intro.scss";
 
 @include font-face('PT Sans', '../fonts/pt-sans', 400, 'normal');
 @include font-face('PT Sans', '../fonts/pt-sans', 700, 'normal');
@@ -17,6 +18,9 @@ body {
   mix-blend-mode: normal;
 }
 
+img {
+  width: 100%;
+}
 
 a {
   text-decoration: none;

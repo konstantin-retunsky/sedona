@@ -46,6 +46,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-terser": "^2.0.1",
     "gulp-webp": "^4.0.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "nunjucks": "^3.2.3"
   }
 }
