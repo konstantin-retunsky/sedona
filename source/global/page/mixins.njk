@@ -1,7 +1,45 @@
-<ul>
-	<li>1</li>
-	<li>2</li>
-	<li>3</li>
-	<li>4</li>
-	<li>5</li>
-</ul>
+{% macro img(args) %}
+	<picture>
+		{% if args.type == "raster" %}
+			{% for mediaWidth in args.media %}
+				{% if mediaWidth == args.media | getLastElement %}
+					<source
+						srcset="{{ args.src }}-{{ mediaWidth }}@2x.webp 2x,
+										{{ args.src }}-{{ mediaWidth }}.webp 1x">
+					<img
+						class="{{ args.class }}"
+						src="{{ args.src }}-{{ mediaWidth }}.jpg"
+						srcset="{{ args.src }}-{{ mediaWidth }}@2x.jpg 2x"
+						alt="{{ args.alt }}"
+						width="{{ args.width }}"
+						height="{{ args.height }}">
+				{% else %}
+					<source
+						type="image/webp"
+						media="(min-width: {{ mediaWidth }})"
+						srcset="{{ args.src }}-{{ mediaWidth }}@2x.webp 2x,
+										{{ args.src }}-{{ mediaWidth }}.webp 1x">
+					<source
+						media="(min-width: {{ mediaWidth }})"
+						srcset="{{ args.src }}-{{ mediaWidth }}@2x.jpg 2x,
+										{{ args.src }}-{{ mediaWidth }}.jpg 1x">
+				{% endif %}
+			{% endfor %}
+		{% elif args.type == "vector" %}
+			{% for mediaWidth in args.media %}
+				{% if mediaWidth == args.media | getLastElement %}
+					<img
+						class="{{ args.class }}"
+						src="{{ args.src }}-{{ mediaWidth }}.svg"
+						alt="{{ args.alt }}"
+						width="{{ args.width }}"
+						height="{{ args.height }}">
+				{% else %}
+					<source
+						media="(min-width: {{ mediaWidth }})"
+						srcset="{{ args.src }}-{{ mediaWidth }}.svg">
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</picture>
+{% endmacro %}
