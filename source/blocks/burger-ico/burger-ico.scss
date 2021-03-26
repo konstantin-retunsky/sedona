@@ -1,7 +1,7 @@
 $height-line: 7px;
 $margin-line: 15px;
 $border-radius-line: 20px;
-$color-line: black;
+$burger-color: black;
 $width-burger: 40px;
 $height-burger-ico: 40px;
 $rotate: -180;
@@ -27,7 +27,7 @@ $rotate: -180;
 		width: 100%;
 		height: $height-line;
 		border-radius: $border-radius-line;
-		background-color: $color-line;
+		background-color: $burger-color;
 	}
 
 	span {
