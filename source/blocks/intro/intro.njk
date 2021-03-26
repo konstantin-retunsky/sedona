@@ -1,0 +1,28 @@
+{% import "global/page/mixins.njk" as mixins %}
+
+<section class="intro">
+
+  {{ mixins.img({
+    class: "intro__bg",
+    src: "img/intro-bg",
+    alt:"Фотография гор Sedona",
+    media:["768px", "320px"],
+    type: "raster",
+    width: "901",
+    height: "389"}) }}
+
+  <img
+    class="intro__svg-text"
+    src="img/intro-logo.svg"
+    width="282"
+    height="214"
+    alt="Добро пожаловать в Седану">
+  {# <img class="intro__svg-text intro__svg-text--inner"
+    width="282"
+    height="214"
+    src="img/intro-logo-inner-page.svg"
+    width="282"
+    height="214"
+    alt="Добро пожаловать в Седану"> #}
+  
+</section>
