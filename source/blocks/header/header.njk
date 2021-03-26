@@ -1,11 +1,18 @@
 
 <header class="header">
-	<a class="header__logo" href="index.html" aria-label="Главная страница сайта">
-		<picture>
-			<source media="(min-width: 1200px)" srcset="img/header-logo-desktop.svg">
-			<source media="(min-width: 768px)" srcset="img/header-logo-tablet.svg">
-			<img src="img/header-logo-mobile.svg" alt="Логотип Седона">
-		</picture>
-	</a>
+
 	{% include "blocks/page-nav/page-nav.njk" %}
+
+	<div class="header__logo-wrapper">
+		<a class="header__logo" href="index.html" aria-label="Главная страница сайта">
+			<picture>
+				<source media="(min-width: 1200px)" srcset="img/header-logo-desktop.svg">
+				<source media="(min-width: 768px)" srcset="img/header-logo-tablet.svg">
+				<img src="img/header-logo-mobile.svg" alt="Логотип Седона">
+			</picture>
+		</a>
+	</div>
+
+	{% include "blocks/intro/intro.njk" %}
+
 </header>
