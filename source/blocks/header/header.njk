@@ -1,3 +1,4 @@
+{% import "global/page/mixins.njk" as mixins %}
 
 <header class="header">
 
@@ -5,11 +6,13 @@
 
 	<div class="header__logo-wrapper">
 		<a class="header__logo" href="index.html" aria-label="Главная страница сайта">
-			<picture>
-				<source media="(min-width: 1200px)" srcset="img/header-logo-desktop.svg">
-				<source media="(min-width: 768px)" srcset="img/header-logo-tablet.svg">
-				<img src="img/header-logo-mobile.svg" alt="Логотип Седона">
-			</picture>
+			{{ mixins.img({
+				src: "img/header-logo",
+				alt:"Логотип Седона",
+				media:["1200px", "768px", "320px"],
+				type: "vector",
+				width: "102",
+				height: "85"}) }}
 		</a>
 	</div>
 

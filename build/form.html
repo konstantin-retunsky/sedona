@@ -12,6 +12,8 @@
 
 	<link rel="stylesheet" href="css/style.min.css">
 
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body class="index">
@@ -19,27 +21,15 @@
 		
 			
 <header class="header">
-	<a class="header__logo" href="index.html" aria-label="Главная страница сайта">
-		<picture>
-			<source media="(min-width: 1200px)" srcset="img/header-logo-desktop.svg">
-			<source media="(min-width: 768px)" srcset="img/header-logo-tablet.svg">
-			<img src="img/header-logo-mobile.svg" alt="Логотип Седона">
-		</picture>
-	</a>
+
 	
+
 
 
 
 
 <nav class="page-nav">
-
-	
-	<button class="burger-ico page-nav__toggle">
-		<span></span>
-	</button>
-
-
-	<ul class="page-nav__list">
+	<ul class="page-nav__list" data-height-nav="d">
 		
 			<li class="page-nav__item">
 				
@@ -82,10 +72,28 @@
 			</li>
 				
 	</ul>
+
+	
+	<button class="burger-ico page-nav__toggle">
+		<span></span>
+	</button>
+
 </nav>
 
-</header>
 
+	<div class="header__logo-wrapper">
+		<a class="header__logo" href="index.html" aria-label="Главная страница сайта">
+			<picture>
+				<source media="(min-width: 1200px)" srcset="img/header-logo-desktop.svg">
+				<source media="(min-width: 768px)" srcset="img/header-logo-tablet.svg">
+				<img src="img/header-logo-mobile.svg" alt="Логотип Седона">
+			</picture>
+		</a>
+	</div>
+
+	
+
+</header>
 		
 
 		

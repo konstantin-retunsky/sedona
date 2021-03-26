@@ -9,27 +9,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 document.addEventListener("DOMContentLoaded", function (event) {
   var btnToggle = document.querySelector(".page-nav__toggle");
-  var pageNav = document.querySelector(".page-nav");
-  pageNav ? btnToggle.addEventListener("click", function () {
-    return pageNav.classList.toggle("page-nav--active");
-  }) : false;
+  var pageNavList = document.querySelector(".page-nav__list");
+  if (pageNavList) btnToggle.addEventListener("click", function () {
+    return pageNavList.classList.toggle("page-nav__list--active");
+  });
 });
-data = [{
-  "text": "Фото и видеоНе можете решиться на путешествие из-за курса?Фотографии помогут вам забыть о политике и экономике."
-}, {
-  "text": "неродные просторыАвтор фото: Борис"
-}, {
-  "text": "1350"
-}, {
-  "text": "Местная растительностьАвтор фото: Сергей"
-}, {
-  "text": "Дорога на северАвтор фото: Петр"
-}, {
-  "text": "Мост дьяволаАвтор фото: Антон"
-}, {
-  "text": "143"
-}, {
-  "text": "96"
-}, {
-  "text": "254"
-}];
