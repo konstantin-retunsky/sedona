@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 	let btnToggle = document.querySelector(".page-nav__toggle");
-	let pageNav = document.querySelector(".page-nav");
+	let pageNavList = document.querySelector(".page-nav__list");
 
-	pageNav
-		? btnToggle.addEventListener("click", () =>
-				pageNav.classList.toggle("page-nav--active")
-		  )
-		: false
-})
+	if (pageNavList)
+		btnToggle.addEventListener("click", () =>
+			pageNavList.classList.toggle("page-nav__list--active")
+		);
+});

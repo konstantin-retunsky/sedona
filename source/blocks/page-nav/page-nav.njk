@@ -10,15 +10,15 @@
 	]
 %}
 
+
 <nav class="page-nav">
-
-	{{ burgerIcon.value('page-nav__toggle') }}
-
-	<ul class="page-nav__list">
+	<ul class="page-nav__list" data-height-nav="d">
 		{% for item in data %}
 			<li class="page-nav__item">
 				{{ button.value("a", item.text, "", item.link) }}
 			</li>
 		{% endfor %}		
 	</ul>
+
+	{{ burgerIcon.value('page-nav__toggle') }}
 </nav>

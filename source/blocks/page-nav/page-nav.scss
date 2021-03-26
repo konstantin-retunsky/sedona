@@ -1,12 +1,121 @@
 @import "../../global/scss/variables.scss";
 @import "../../global/scss/mixins.scss";
 
-.page-nav {
-	// @include pt-sans($white, $fs-21, $lh-26, $fw-700);
+.page-nav__list {
+	height: 0;
+	position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+	transition: height 1.3s;
+
+	&::before {
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 0.2) 100%
+		);
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 7px;
+		left: 0px;
+		bottom: 0;
+	}
+
+	@include media-tablet {
+		height: auto;
+		display: flex;
+		justify-content: space-around;
+		padding: 15px 0;
+		&::before {
+			content: "";
+			height: 0;
+		}
+	}
 }
 
-.nav_toggle span::after, 
-.nav_toggle span::before,
-.nav_toggle span {
-  background-color: blue;
+@include media-tablet {
+	.page-nav__toggle {
+		display: none;
+	}
+}
+
+.page-nav__list--active {
+	height: 233px;
+	z-index: 1;
+}
+
+.page-nav__item {
+	border-bottom: 1px solid #678fa8;
+	border-top: 1px solid #aecee2;
+
+	a {
+		padding: 15px 0;
+	}
+
+	@include media-tablet {
+		border: none;
+
+		&:nth-child(2) {
+			margin-right: 50px;
+		}
+
+		&:nth-child(3) {
+			margin-left: 50px;
+		}
+
+		a {
+			font-size: 14px;
+			color: $black;
+			padding: 0;
+			background-color: $white;
+
+			&:focus,
+			&:hover {
+				color: $half-baked;
+				background-color: $white;
+			}
+
+			&:active {
+				color: $pine-cone;
+				background-color: $white;
+			}
+
+			&:active:hover {
+				color: $kabul;
+			}
+		}
+	}
+}
+
+.page-nav__toggle {
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	right: 0;
+	transform: translate(-10px, 10px);
+
+	&:active {
+		opacity: 0.3;
+	}
+
+	span::after,
+	span::before {
+		transition: top 300ms 300ms, transform 300ms, background-color 0.7s;
+	}
+
+
+	span::after,
+	span::before,
+	span {
+		background-color: $half-baked;
+	}
+}
+
+.page-nav__list--active ~ .page-nav__toggle {
+	span::after,
+	span::before {
+		background-color: $white;
+	}
 }
