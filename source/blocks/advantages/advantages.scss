@@ -1,0 +1,44 @@
+@import "../../global/scss/mixins.scss";
+
+.advantages {
+	margin-top: 32px;
+}
+
+.advantages__section-title {
+	padding: 0 6.25%;
+	font-size: $fs-18;
+	line-height: $lh-26;
+	font-weight: 700;
+	text-align: center;
+}
+
+.advantages__section-text {
+	padding: 0 6.25%;
+	position: relative;
+	line-height: $lh-26;
+	color: $mine-shaft;
+	text-align: center;
+}
+
+.advantages__wrapper {
+	@include media-tablet {
+		display: flex;
+	}
+}
+
+.advantages__wrapper--reverse {
+	@include media-tablet {
+		flex-direction: row-reverse;
+	}
+}
+
+.advantages__wrapper img {
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+	width: 100%;
+
+	@include media-tablet {
+		height: 256px;
+	}
+}

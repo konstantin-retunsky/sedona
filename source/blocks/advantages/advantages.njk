@@ -1,5 +1,118 @@
-let data = [
-  {
-    "text": "седона — небольшой городок в аризоне, заслуживающий большего!рассмотрим 5 причин, по которым седона круче, чем гранд каньон!"
-  },
-]
+{% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/advantages-num/advantages-num.njk" as advantagesNum %}
+  
+{%
+  set data = {
+    sectionTitle: "седона — небольшой городок в аризоне, заслуживающий большего!",
+    sectionText: "рассмотрим 5 причин, по которым седона круче, чем гранд каньон!",
+    block1: {
+      title: "Настоящий городок",
+      num: "— №1 —",
+      text: "Седона не аттракцион для туристов, там течет своя жизнь"
+    },
+    block2: {
+      title: "Там есть мост дьявола",
+      num: "— №2 —",
+      text: "Да, по нему можно пройти! если вы осмелитесь, конечно"
+    },
+    block3: {
+      title: "Небольшая площадь",
+      num: "— №3 —",
+      text: "Все интересные места находятся очень близко"
+    },
+    block4: {
+      title: "Красивая Дорога",
+      num: "— №4 —",
+      text: "Ехать в седону из лас-вегаса совсем не скучно!"
+    },
+    block5: {
+      title: "Мало туристов",
+      num: "— №5 —",
+      text: "Большинство едет в гранд каньон и толпится там"
+    },
+    blockIcon1: {
+      title: "Еда",
+      text: "Всегда заказывайте фирменный бургер,вы не разочаруетесь!"
+    },
+    blockIcon2: {
+      title: "Сувениры",
+      text: "Не только китайского, но и местного производства!"
+    },
+    blockIcon3: {
+      title: "Жилье",
+      text: "Рекомендуем пожить в настоящем мотеле, все как в кино!"
+    }
+  }
+%}
+
+<section class="advantages">
+  <h2 class="advantages__section-title">
+    {{ data.sectionTitle }}
+  </h2>
+  <p class="advantages__section-text">
+    {{ data.sectionText }}
+  </p>
+
+  <div class="advantages__wrapper">
+    {{advantagesNum.value({
+      tag: "div",
+      class: "advantages-num--tringle",
+      title: data.block1.title,
+      num: data.block1.num,
+      text: data.block1.text
+    })}}
+
+    {{mixins.img({
+      src: "img/advantages-1",
+      media: ["520px", "320px"],
+      type: "raster",
+      width: "520",
+      height: "260",
+      alt: "Фотография здания"
+    })}}
+  </div>
+
+  <div class="advantages__wrapper advantages__wrapper--reverse">
+    {{advantagesNum.value({
+      tag: "div",
+      title: data.block2.title,
+      num: data.block2.num,
+      text: data.block2.text
+    })}}
+    {{mixins.img({
+      src: "img/advantages-2",
+      media: ["520px", "320px"],
+      type: "raster",
+      width: 520,
+      height: 260,
+      alt: "Фотография здания"
+    })}}
+  </div>
+
+  <div class="advantages__wrapper">
+    {{advantagesNum.value({
+      tag: "div",
+      class: "advantages-num--grey",
+      title: data.block3.title,
+      num: data.block3.num,
+      text: data.block3.text
+    })}}
+
+    {{advantagesNum.value({
+      tag: "div",
+      class: "advantages-num--grey",
+      title: data.block3.title,
+      num: data.block3.num,
+      text: data.block3.text
+    })}}
+    {{advantagesNum.value({
+      tag: "div",
+      class: "advantages-num--grey",
+      title: data.block3.title,
+      num: data.block3.num,
+      text: data.block3.text
+    })}}
+  </div>
+
+<section>
+
