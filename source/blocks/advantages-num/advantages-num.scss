@@ -1,0 +1,69 @@
+.advantages-num {
+	padding-top: 39px;
+	padding-bottom: 35px;
+	position: relative;
+	background-color: $half-baked;
+	text-align: center;
+	color: $white;
+
+  @include media-tablet {
+    padding-top: 43px;
+    padding-bottom: 40px;
+  }
+}
+
+.advantages-num__title {
+	padding: 0 6.25%;
+
+  @include media-tablet {
+    font-size: $fs-21;
+  }
+}
+
+.advantages-num__text {
+	padding: 0 6.25%;
+}
+
+.advantages-num--grey {
+  padding-top: 25px;
+  padding-bottom: 25px;
+	background-color: $gallery-14;
+  flex-grow: 1;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 10%;
+		width: 80%;
+		height: 1px;
+		background-color: $alto-6;
+	}
+
+  @include media-tablet {
+    padding-top: 41px;
+    padding-bottom: 41px;
+  }
+}
+
+.advantages-num--grey .advantages-num__title {
+	color: $black;
+}
+
+.advantages-num--grey .advantages-num__text {
+	color: $mine-shaft;
+}
+
+.advantages-num--tringle {
+	padding-top: 55px;
+	padding-bottom: 39px;
+	background-image: url("../img/triangle-bottom.png");
+	background-position: top;
+	background-repeat: no-repeat;
+
+	@include media-tablet {
+		background-image: none;
+    padding-top: 39px;
+    padding-bottom: 35px;
+	}
+}
