@@ -1,6 +1,10 @@
 {% import "global/page/mixins.njk" as mixins %}
 
-<section class="intro intro--inner">
+{% if classPage != "index" %}
+  {% set innerClass = "intro--inner" %}
+{% endif %}
+
+<section class="intro {{ innerClass }}">
 
   {{ mixins.img({
     class: "intro__bg",
