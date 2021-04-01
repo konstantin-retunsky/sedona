@@ -1,34 +1,62 @@
 .advantages-num {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding-top: 39px;
 	padding-bottom: 35px;
-	position: relative;
 	background-color: $half-baked;
 	text-align: center;
 	color: $white;
 
-  @include media-tablet {
-    padding-top: 43px;
-    padding-bottom: 40px;
-  }
+	@include media-tablet {
+		flex-basis: 33%;
+		padding: 0;
+		padding-top: 43px;
+		// width: 33%;
+	}
+
+	@include media-desktop {
+		padding-top: 47px;
+	}
 }
 
 .advantages-num__title {
-	padding: 0 6.25%;
+	margin: 0;
+	margin-bottom: 13px;
 
-  @include media-tablet {
-    font-size: $fs-21;
-  }
+	@include media-tablet {
+		margin-bottom: 9px;
+		max-width: 192px;
+		font-size: $fs-21;
+	}
 }
 
 .advantages-num__text {
-	padding: 0 6.25%;
+	max-width: 294px;
+	margin: 0;
+	@include media-tablet {
+		max-width: 192px;
+	}
+
+	@include media-desktop {
+		max-width: 236px;
+	}
+}
+
+.advantages-num__text--num {
+	margin-bottom: 21px;
+
+	@include media-tablet {
+		margin-bottom: 17px;
+	}
 }
 
 .advantages-num--grey {
-  padding-top: 25px;
-  padding-bottom: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 	background-color: $gallery-14;
-  flex-grow: 1;
+	flex-grow: 1;
 
 	&::after {
 		content: "";
@@ -40,10 +68,30 @@
 		background-color: $alto-6;
 	}
 
-  @include media-tablet {
-    padding-top: 41px;
-    padding-bottom: 41px;
-  }
+	@include media-tablet {
+		padding-top: 41px;
+		padding-bottom: 41px;
+	}
+}
+
+.advantages-num--grey {
+	.advantages-num__title {
+		@include media-tablet {
+			max-width: 161px;
+		}
+	}
+
+	.advantages-num__text {
+		max-width: 258px;
+
+		@include media-tablet {
+			max-width: 179px;
+		}
+
+		@include media-desktop {
+			max-width: 315px;
+		}
+	}
 }
 
 .advantages-num--grey .advantages-num__title {
@@ -55,7 +103,7 @@
 }
 
 .advantages-num--tringle {
-	padding-top: 55px;
+	padding-top: 71px;
 	padding-bottom: 39px;
 	background-image: url("../img/triangle-bottom.png");
 	background-position: top;
@@ -63,7 +111,7 @@
 
 	@include media-tablet {
 		background-image: none;
-    padding-top: 39px;
-    padding-bottom: 35px;
+		padding-top: 39px;
+		padding-bottom: 35px;
 	}
 }
