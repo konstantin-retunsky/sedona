@@ -1,6 +1,7 @@
 {% import "../../global/page/mixins.njk" as mixins %}
 {% import "../../blocks/advantages-num/advantages-num.njk" as advantagesNum %}
-  
+{% import "../../blocks/advantages-icon/advantages-icon.njk" as advantagesIcon %}
+
 {%
   set data = {
     sectionTitle: "седона — небольшой городок в аризоне, заслуживающий большего!",
@@ -15,33 +16,46 @@
       num: "— №2 —",
       text: "Да, по нему можно пройти! если вы осмелитесь, конечно"
     },
-    block3: {
-      title: "Небольшая площадь",
-      num: "— №3 —",
-      text: "Все интересные места находятся очень близко"
-    },
-    block4: {
-      title: "Красивая Дорога",
-      num: "— №4 —",
-      text: "Ехать в седону из лас-вегаса совсем не скучно!"
-    },
-    block5: {
-      title: "Мало туристов",
-      num: "— №5 —",
-      text: "Большинство едет в гранд каньон и толпится там"
-    },
-    blockIcon1: {
-      title: "Еда",
-      text: "Всегда заказывайте фирменный бургер,вы не разочаруетесь!"
-    },
-    blockIcon2: {
-      title: "Сувениры",
-      text: "Не только китайского, но и местного производства!"
-    },
-    blockIcon3: {
-      title: "Жилье",
-      text: "Рекомендуем пожить в настоящем мотеле, все как в кино!"
-    }
+    blocksGrey: [
+      {
+        title: "Небольшая площадь",
+        num: "— №3 —",
+        text: "Все интересные места находятся очень близко"
+      },
+      {
+        title: "Красивая Дорога",
+        num: "— №4 —",
+        text: "Ехать в седону из лас-вегаса совсем не скучно!"
+      },
+      {
+        title: "Мало туристов",
+        num: "— №5 —",
+        text: "Большинство едет в гранд каньон и толпится там"
+      }
+    ],
+    blocksIcon: [
+      {
+        title: "Еда",
+        text: "Всегда заказывайте фирменный бургер,вы не разочаруетесь!",
+        icon: "icon-burger",
+        width: 39,
+        height: 36
+      },
+      {
+        title: "Сувениры",
+        text: "Не только китайского, но и местного производства!",
+        icon: "icon-gift",
+        width: 32,
+        height: 38
+      },
+      {
+        title: "Жилье",
+        text: "Рекомендуем пожить в настоящем мотеле, все как в кино!",
+        icon: "icon-house",
+        width: 40,
+        height: 34
+      }
+    ]
   }
 %}
 
@@ -72,6 +86,18 @@
     })}}
   </div>
 
+  <div class="advantages__wrapper advantages__wrapper--icon">
+    {% for iconBlock in data.blocksIcon %}
+      {{advantagesIcon.value({
+        title: iconBlock.title,
+        text: iconBlock.text,
+        icon: iconBlock.icon,
+        width: iconBlock.width,
+        height: iconBlock.height
+      })}}
+    {% endfor %}
+  </div>
+
   <div class="advantages__wrapper advantages__wrapper--reverse">
     {{advantagesNum.value({
       tag: "div",
@@ -90,28 +116,16 @@
   </div>
 
   <div class="advantages__wrapper">
-    {{advantagesNum.value({
-      tag: "div",
-      class: "advantages-num--grey",
-      title: data.block3.title,
-      num: data.block3.num,
-      text: data.block3.text
-    })}}
+    {% for greyBlock in data.blocksGrey %}
+      {{advantagesNum.value({
+        tag: "div",
+        class: "advantages-num--grey",
+        title: greyBlock.title,
+        num: greyBlock.num,
+        text: greyBlock.text
+      })}}
+    {% endfor %}
 
-    {{advantagesNum.value({
-      tag: "div",
-      class: "advantages-num--grey",
-      title: data.block4.title,
-      num: data.block4.num,
-      text: data.block4.text
-    })}}
-    {{advantagesNum.value({
-      tag: "div",
-      class: "advantages-num--grey",
-      title: data.block5.title,
-      num: data.block5.num,
-      text: data.block5.text
-    })}}
   </div>
 
 <section>

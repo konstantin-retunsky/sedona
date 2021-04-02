@@ -1,11 +1,19 @@
-let data = [
-  {
-    "text": "едавсегда заказывайте фирменный бургер,вы не разочаруетесь!"
-  },
-  {
-    "text": "сувенирыне только китайского, но и местного производства!"
-  },
-  {
-    "text": "жильерекомендуем пожить в настоящем мотеле, все как в кино!"
-  },
-]
+
+
+{% macro value(args) %}
+  <div class="advantages-icon">
+
+
+    <div class="advantages-icon__content">
+      <h3 class="advantages-icon__title">
+        <svg class="advantages-icon__icon" width="{{ args.width }}" height="{{ args.height }}">
+          <use xlink:href="img/sprite.svg#{{ args.icon }}"></use>
+        </svg>
+        {{ args.title }}
+      </h3>
+      <p class="advantages-icon__text">
+        {{ args.text }}
+      </p>
+    </div>
+  </div>
+{% endmacro %}
