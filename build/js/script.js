@@ -11,6 +11,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var btnToggle = document.querySelector(".page-nav__toggle");
   var pageNavList = document.querySelector(".page-nav__list");
   if (pageNavList) btnToggle.addEventListener("click", function () {
-    return pageNavList.classList.toggle("page-nav__list--active");
+    pageNavList.classList.toggle("page-nav__list--active") ? btnToggle.attributes["aria-label"].value = "Закрыть меню" : btnToggle.attributes["aria-label"].value = "Открыть меню";
   });
 });
