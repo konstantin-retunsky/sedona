@@ -4,6 +4,7 @@
 			{% for mediaWidth in args.media %}
 				{% if mediaWidth == args.media | getLastElement %}
 					<source
+						media="(min-width: 0)"
 						srcset="{{ args.src }}-{{ mediaWidth }}.webp 1x,
 										{{ args.src }}-{{ mediaWidth }}@2x.webp 2x">
 					<img

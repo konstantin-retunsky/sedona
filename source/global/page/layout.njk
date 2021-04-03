@@ -4,38 +4,38 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<title>{{ title }}</title>
+	<head>
+		<title>{{ title }}</title>
 
-	<meta charset="UTF-8">
-	{# <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" /> #}
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		{# <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" /> #}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta
+		<meta
 		name="description"
 		content="{{ metaDescription }}">
 
-	<link rel="stylesheet" href="css/style.min.css">
+		<link rel="stylesheet" href="css/style.min.css">
 
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-</head>
+	</head>
 
-<body class="{{ classPage }}">
-	<div class="container">
-		{% block header %}
-			{% include "blocks/header/header.njk" %}
-		{% endblock %}
+	<body class="{{ classPage }}">
+		<div class="container">
+			{% block header %}
+				{% include "blocks/header/header.njk" %}
+			{% endblock %}
 
-		{% block content %}{% endblock %}
+			{% block content %}{% endblock %}
 
-		{% block footer %}
-			{% include "blocks/footer/footer.njk" %}
-		{% endblock %}
-	</div>
-</body>
+			{% block footer %}
+				{% include "blocks/footer/footer.njk" %}
+			{% endblock %}
+		</div>
 
+		<script src="js/script.min.js"></script>
 
-<script src="js/script.min.js"></script>
+	</body>
 
 </html>
