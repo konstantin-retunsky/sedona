@@ -12,7 +12,7 @@
 
 
 <nav class="page-nav">
-	<ul class="page-nav__list" data-height-nav="d">
+	<ul class="page-nav__list">
 		{% for item in data %}
 			<li class="page-nav__item">
 				{{ button.value("a", item.text, "", item.link) }}
@@ -20,5 +20,10 @@
 		{% endfor %}		
 	</ul>
 
-	{{ burgerIcon.value('page-nav__toggle') }}
+	{{
+		burgerIcon.value({
+			class: "page-nav__toggle",
+			ariaLabel: "Открыть меню"
+		})
+	}}
 </nav>
