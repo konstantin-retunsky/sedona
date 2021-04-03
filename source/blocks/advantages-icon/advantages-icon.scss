@@ -1,11 +1,21 @@
 
-
 .advantages-icon {
+  display: flex;
+  flex-direction: column;
   padding-left: 49px;
   margin: 0 auto;
   margin-bottom: 26px;
-	display: flex;
   max-width: 62%;
+
+  @include media-tablet {
+    padding-left: 0px;
+    text-align: center;
+    max-width: 193px;
+  }
+
+  @include media-desktop {
+    max-width: 313px;
+  }
 }
 
 .advantages-icon__icon {
@@ -14,6 +24,15 @@
   position: absolute;
   left: -49px;
   top: -10px;
+
+  @include media-tablet {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
 }
 
 .advantages-icon__title {
@@ -21,15 +40,21 @@
   margin: 0;
   margin-bottom: 20px;
   font-size: $fs-18;
+  line-height: $lh-26;
+
+  @include media-tablet {
+    margin-bottom: 20px;
+  }
 }
 
 .advantages-icon__text {
   margin: 0;
   font-size: $fs-14;
+  line-height: $lh-21;
   color: $mine-shaft;
 }
 
-#icon-burger {
+.advantages-icon__icon--icon-burger {
   width: 40px;
   height: 34px;
 
@@ -39,7 +64,7 @@
   }
 }
 
-#icon-gift {
+.advantages-icon__icon--icon-gift {
   height: 32px;
   width: 38px;
 
@@ -49,7 +74,7 @@
   }
 }
 
-#icon-home {
+.advantages-icon__icon--icon-house {
   width: 39px;
   height: 36px;
 

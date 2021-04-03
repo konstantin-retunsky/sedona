@@ -52,6 +52,14 @@
 
 .advantages__wrapper--icon {
   padding: 35px 0;
+
+	@include media-tablet {
+		padding: 57px 0;
+	}
+
+	@include media-desktop {
+		padding-bottom: 80px;
+	}
 }
 
 .advantages__wrapper picture {

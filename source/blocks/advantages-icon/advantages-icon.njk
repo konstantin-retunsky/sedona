@@ -2,11 +2,11 @@
 
 {% macro value(args) %}
   <div class="advantages-icon">
-
-
-    <div class="advantages-icon__content">
       <h3 class="advantages-icon__title">
-        <svg class="advantages-icon__icon" width="{{ args.width }}" height="{{ args.height }}">
+        <svg
+          class="advantages-icon__icon advantages-icon__icon--{{ args.icon }}"
+          width="{{ args.width }}"
+          height="{{ args.height }}">
           <use xlink:href="img/sprite.svg#{{ args.icon }}"></use>
         </svg>
         {{ args.title }}
@@ -14,6 +14,5 @@
       <p class="advantages-icon__text">
         {{ args.text }}
       </p>
-    </div>
   </div>
 {% endmacro %}

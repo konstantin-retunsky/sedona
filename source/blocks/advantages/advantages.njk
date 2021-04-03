@@ -68,65 +68,76 @@
   </p>
 
   <div class="advantages__wrapper">
-    {{advantagesNum.value({
-      tag: "div",
-      class: "advantages-num--tringle",
-      title: data.block1.title,
-      num: data.block1.num,
-      text: data.block1.text
-    })}}
+    {{
+      advantagesNum.value({
+        tag: "div",
+        class: "advantages-num--tringle",
+        title: data.block1.title,
+        num: data.block1.num,
+        text: data.block1.text
+      })
+    }}
 
-    {{mixins.img({
-      src: "img/advantages-1",
-      media: ["768px"],
-      type: "raster",
-      width: "520",
-      height: "260",
-      alt: "Фотография здания"
-    })}}
+    {{
+      mixins.img({
+        src: "img/advantages-1",
+        media: ["768px"],
+        type: "raster",
+        width: "520",
+        height: "260",
+        alt: "Фотография здания"
+      })
+    }}
   </div>
 
   <div class="advantages__wrapper advantages__wrapper--icon">
     {% for iconBlock in data.blocksIcon %}
-      {{advantagesIcon.value({
-        title: iconBlock.title,
-        text: iconBlock.text,
-        icon: iconBlock.icon,
-        width: iconBlock.width,
-        height: iconBlock.height
-      })}}
+      {{
+        advantagesIcon.value({
+          title: iconBlock.title,
+          text: iconBlock.text,
+          icon: iconBlock.icon,
+          width: iconBlock.width,
+          height: iconBlock.height
+        })
+      }}
     {% endfor %}
   </div>
 
   <div class="advantages__wrapper advantages__wrapper--reverse">
-    {{advantagesNum.value({
-      tag: "div",
-      title: data.block2.title,
-      num: data.block2.num,
-      text: data.block2.text
-    })}}
-    {{mixins.img({
-      src: "img/advantages-2",
-      media: ["768px"],
-      type: "raster",
-      width: 520,
-      height: 260,
-      alt: "Фотография здания"
-    })}}
+    {{
+      advantagesNum.value({
+        tag: "div",
+        title: data.block2.title,
+        num: data.block2.num,
+        text: data.block2.text
+      })
+    }}
+    {{
+      mixins.img({
+        src: "img/advantages-2",
+        media: ["768px"],
+        type: "raster",
+        width: 520,
+        height: 260,
+        alt: "Фотография здания"
+      })
+    }}
   </div>
 
   <div class="advantages__wrapper">
     {% for greyBlock in data.blocksGrey %}
-      {{advantagesNum.value({
-        tag: "div",
-        class: "advantages-num--grey",
-        title: greyBlock.title,
-        num: greyBlock.num,
-        text: greyBlock.text
-      })}}
+      {{
+        advantagesNum.value({
+          tag: "div",
+          class: "advantages-num--grey",
+          title: greyBlock.title,
+          num: greyBlock.num,
+          text: greyBlock.text
+        })
+      }}
     {% endfor %}
 
   </div>
 
-<section>
-
+  <section>
