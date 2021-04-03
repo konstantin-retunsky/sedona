@@ -5,7 +5,7 @@
 				{% if mediaWidth == args.media | getLastElement %}
 					<source
 						srcset="{{ args.src }}-{{ mediaWidth }}@2x.webp 2x,
-										{{ args.src }}-{{ mediaWidth }}.webp 1x">
+										{{ args.src }}-{{ mediaWidth }}.webp">
 					<img
 						class="{{ args.class }}"
 						src="{{ args.src }}-{{ mediaWidth }}.jpg"
@@ -18,11 +18,11 @@
 						type="image/webp"
 						media="(min-width: {{ mediaWidth }})"
 						srcset="{{ args.src }}-{{ mediaWidth }}@2x.webp 2x,
-										{{ args.src }}-{{ mediaWidth }}.webp 1x">
+										{{ args.src }}-{{ mediaWidth }}.webp">
 					<source
 						media="(min-width: {{ mediaWidth }})"
 						srcset="{{ args.src }}-{{ mediaWidth }}@2x.jpg 2x,
-										{{ args.src }}-{{ mediaWidth }}.jpg 1x">
+										{{ args.src }}-{{ mediaWidth }}.jpg">
 				{% endif %}
 			{% endfor %}
 		{% elif args.type == "vector" %}

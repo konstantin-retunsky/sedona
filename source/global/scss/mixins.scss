@@ -7,7 +7,7 @@
 }
 
 @mixin pt-sans($color: false, $size: false, $lh: false, $weight: false) {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   @if $size {
     font-size: $size;
   }
@@ -89,6 +89,7 @@
     font-weight: $weight;
     font-style: $style;
     src: url('#{$file-path}-#{$weight}.woff2') format('woff2'), /* Super Modern Browsers */
-         url('#{$file-path}-#{$weight}.woff') format('woff'), /* Modern Browsers */
+         url('#{$file-path}-#{$weight}.woff') format('woff'); /* Modern Browsers */
+    font-display: swap;
   }
 }
