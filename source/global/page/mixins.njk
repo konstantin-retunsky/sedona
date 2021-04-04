@@ -45,3 +45,12 @@
 		{% endif %}
 	</picture>
 {% endmacro %}
+
+{% macro sprite(args) %}
+	<svg
+		class="{{ args.class }}"
+		width="{{ args.width }}"
+		height="{{ args.height }}">
+		<use xlink:href="img/sprite.svg#{{ args.name }}"></use>
+	</svg>
+{% endmacro %}
