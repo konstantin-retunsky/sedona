@@ -1,13 +1,68 @@
-{%
-  set data = [
-    {
-      text: "разработано"
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{% set data = {
+    socialList: [
+      {
+        ariaLabel: "Твитер",
+        href: "twitter.com",
+        sprite: {
+          name: "icon-twitter",
+          width: "17.5",
+          height: "14.57"
+        }
+      },
+      {
+        ariaLabel: "Фейсбук",
+        href: "facebook.com",
+        sprite: {
+          name: "icon-facebook",
+          width: "8.7",
+          height: "19"
+        }
+      },
+      {
+        ariaLabel: "Ютуб",
+        href: "youtube.com",
+        sprite: {
+          name: "icon-youtube",
+          width: "20",
+          height: "14"
+        }
+      }
+    ],
+    hashtag: {
+      text: "#visitsedona"
     },
-    {
-      text2: "#visitsedona"
+    copyright: {
+      text: "Разработано",
+      href: "#",
+      sprite: {
+        name: "htmlacademy",
+        class: "footer__copyright-icon",
+        width: "27",
+        height: "34"
+      }
     }
-  ]
+  }
 %}
 
 <footer class="footer">
+  <b class="footer__hashtag">
+    {{ data.hashtag.text }}
+  </b>
+
+  <ul class="footer__social-list">
+    {% for socialItem in data.socialList %}
+      <li class="footer__social-item">
+        <a class="button" href="{{ socialItem.href }}" aria-label="{{ socialItem.ariaLabel }}">
+          {{ mixins.sprite(socialItem.sprite) }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a class="footer__copyright" href="{{ data.copyright.href }}">
+    Разработано
+    {{ mixins.sprite(data.copyright.sprite) }}
+  </a>
 </footer>
