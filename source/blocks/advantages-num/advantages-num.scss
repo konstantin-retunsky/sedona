@@ -66,6 +66,12 @@
 		width: 80%;
 		height: 1px;
 		background-color: $alto-6;
+
+
+		@include media-tablet {
+			width: 0;
+			height: 0;
+		}
 	}
 
 	@include media-tablet {
@@ -73,6 +79,7 @@
 		padding-bottom: 41px;
 	}
 }
+
 
 .advantages-num--grey {
 	.advantages-num__title {
@@ -100,6 +107,14 @@
 
 .advantages-num--grey .advantages-num__text {
 	color: $mine-shaft;
+}
+
+
+.advantages-num--grey-lastelement {
+	&::after {
+		width: 0;
+		height: 0;
+	}
 }
 
 .advantages-num--tringle {
