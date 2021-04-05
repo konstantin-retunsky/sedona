@@ -30,24 +30,20 @@
 	}
 }
 
-.intro--inner {
+.intro--inner .intro__bg {
 	height: 158px;
 
-	.intro__bg {
-		object-position: bottom;
+	@include media-tablet {
+		height: 301px;
 	}
+}
+
+.intro--inner .intro__svg-text {
+	height: 39px;
+	transform: translateY(152%);
 
 	@include media-tablet {
-		height: 290px;
-	}
-
-	.intro__svg-text {
-		height: 39px;
-		transform: translateY(152%);
-
-		@include media-tablet {
-			height: 78px;
-			transform: translateY(125%);
-		}
+		height: 78px;
+		transform: translateY(125%);
 	}
 }

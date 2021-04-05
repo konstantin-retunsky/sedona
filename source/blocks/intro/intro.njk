@@ -7,16 +7,18 @@
 <section class="intro {{ innerClass }}">
   <h2 class="visually-hidden">Интро страницы</h2>
 
-  {{ mixins.img({
-    class: "intro__bg",
-    src: "img/intro-bg",
-    alt:"Фотография гор Sedona",
-    media:["768px", "320px"],
-    type: "raster",
-    width: "901",
-    height: "389"}) }}
-
   {% if classPage == "index" %}
+    {{
+      mixins.img({
+        class: "intro__bg",
+        src: "img/intro-bg",
+        alt:"Фотография гор Sedona",
+        media:["768px", "320px"],
+        type: "raster",
+        width: "901",
+        height: "389"
+      })
+    }}
     <img
         class="intro__svg-text"
         src="img/intro-logo.svg"
@@ -24,6 +26,17 @@
         height="214"
         alt="Добро пожаловать в Седану">
   {% else %}
+    {{
+      mixins.img({
+        class: "intro__bg",
+        src: "img/intro-bg-inner",
+        alt:"Фотография гор Sedona",
+        media:["768px", "320px"],
+        type: "raster",
+        width: "901",
+        height: "389"
+      })
+    }}
     <img
         class="intro__svg-text"
         src="img/intro-logo-inner-page.svg"
@@ -31,5 +44,4 @@
         height="39"
         alt="Добро пожаловать в Седану">
   {% endif %}
-
 </section>

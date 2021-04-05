@@ -21,10 +21,11 @@ const dev = parallel(html, styles, scripts, fonts, images, svgSprite)
 const build = series(clean, dev)
 // const build = series(html)
 
-module.exports.dev = 
-  fs.existsSync('build')
-    ? series(setMode(), browserSync)
-    : series(setMode(), dev, browserSync)
+// module.exports.dev = 
+//   fs.existsSync('build')
+//     ? series(setMode(), browserSync)
+//     : series(setMode(), dev, browserSync)
 
+module.exports.dev = series(setMode(), build, browserSync)
 module.exports.build = series(setMode(true), build)
 
