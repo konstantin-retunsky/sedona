@@ -175,6 +175,533 @@
 
 			
   <main class="main">
+    
+
+
+
+
+
+<section class="feedback-form">
+	<h1 class="feedback-form__title">
+		Оставьте свой отзыв
+	</h1>
+	<p class="feedback-form__text">
+		Помогите нашим отелям стать лучше! оставьте отзыв о них,а также о посещенных вами достопримечательностях
+	</p>
+
+	<h2 class="visually-hidden">Форма обратной связи</h2>
+
+	<form action="test.php" class="feedback-form__form">
+		
+			<fieldset class="feedback-form__user-fullname">
+				<legend>Представьтесь:</legend>
+				
+					
+	
+		
+			<label
+				 class="feedback-form__text-label"
+				 for="input__user-name">
+
+
+				ИМЯ*:
+
+				<input
+					
+					 type="text"
+					 name="user-name"
+					 id="input__user-name"
+					 placeholder="Введите ваше имя"
+					 pattern="[A-Za-zА-Яа-яЁё]{1,}"
+					
+					
+					
+					
+					
+					
+					
+					 required>
+
+				
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__text-label"
+				 for="input__last-name">
+
+
+				ФАМИЛИЯ*:
+
+				<input
+					
+					 type="text"
+					 name="last-name"
+					 id="input__last-name"
+					 placeholder="Введите вашу фамилию"
+					 pattern="[A-Za-zА-Яа-яЁё]{1,}"
+					
+					
+					
+					
+					
+					
+					
+					 required>
+
+				
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__text-label"
+				 for="input__second-name">
+
+
+				Отчество:
+
+				<input
+					
+					 type="text"
+					 name="second-name"
+					 id="input__second-name"
+					 placeholder="Введите ваше отчество"
+					 pattern="[A-Za-zА-Яа-яЁё]*"
+					
+					
+					
+					
+					
+					
+					
+					>
+
+				
+
+			</label>
+		
+	
+
+ 
+				
+			</fieldset>
+		
+			<fieldset class="feedback-form__user-contacts">
+				<legend>Контактная информация:</legend>
+				
+					
+	
+		
+			<label
+				 class="feedback-form__text-label"
+				 for="input__user-phone">
+
+
+				Контактный телефон*:
+
+				<input
+					
+					 type="tel"
+					 name="user-phone"
+					 id="input__user-phone"
+					 placeholder="Введите ваш телефон"
+					 pattern="d+"
+					
+					
+					
+					
+					
+					
+					
+					 required>
+
+				
+					
+	<svg
+		
+		 width="18"
+		 height="18">
+		<use xlink:href="img/sprite.svg#icon-phone"></use>
+	</svg>
+
+				
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__text-label"
+				 for="input__user-email">
+
+
+				Электронная почта*:
+
+				<input
+					
+					 type="email"
+					 name="user-email"
+					 id="input__user-email"
+					 placeholder="Введите e-mail"
+					 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,6}$"
+					
+					
+					
+					
+					
+					
+					
+					 required>
+
+				
+					
+	<svg
+		
+		 width="16"
+		 height="12">
+		<use xlink:href="img/sprite.svg#icon-email"></use>
+	</svg>
+
+				
+
+			</label>
+		
+	
+
+ 
+				
+			</fieldset>
+		
+			<fieldset class="feedback-form__user-impressions">
+				<legend>Ваше общее впечатление:</legend>
+				
+					
+	
+		
+			<label
+				 class="feedback-form__radio-label"
+				 for="radio__impression-good">
+
+				<input
+					
+					 type="radio"
+					 name="impression"
+					 id="radio__impression-good"
+					
+					
+					 value="good"
+					
+					
+					
+					
+					 checked
+					
+					 required>
+
+				
+					<span
+						>
+					</span>
+				
+
+				Скорее положительное
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__radio-label"
+				 for="radio__impression-bad">
+
+				<input
+					
+					 type="radio"
+					 name="impression"
+					 id="radio__impression-bad"
+					
+					
+					 value="bad"
+					
+					
+					
+					
+					
+					
+					 required>
+
+				
+					<span
+						>
+					</span>
+				
+
+				Скорее отрицательное
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__radio-label"
+				 for="radio__impression-unknown">
+
+				<input
+					
+					 type="radio"
+					 name="impression"
+					 id="radio__impression-unknown"
+					
+					
+					 value="unknown"
+					
+					
+					
+					
+					 checked
+					
+					 required>
+
+				
+					<span
+						>
+					</span>
+				
+
+				Затрудняюсь ответить
+
+			</label>
+		
+	
+
+ 
+				
+			</fieldset>
+		
+			<fieldset class="feedback-form__user-checklist">
+				<legend>Посещенные достопримечательности:</legend>
+				
+					
+	
+		
+			<label
+				 class="feedback-form__checkbox-label"
+				 for="checkbox__checklist-devils-bridge">
+
+				<input
+					
+					 type="checkbox"
+					 name="devils-bridge"
+					 id="checkbox__checklist-devils-bridge"
+					
+					
+					 value="devils-bridge"
+					
+					
+					
+					
+					 checked
+					
+					>
+
+				
+					<span
+						>
+					</span>
+				
+
+				Мост Дьявола
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__checkbox-label"
+				 for="checkbox__checklist-mountain-bell">
+
+				<input
+					
+					 type="checkbox"
+					 name="mountain-bell"
+					 id="checkbox__checklist-mountain-bell"
+					
+					
+					 value="mountain-bell"
+					
+					
+					
+					
+					 checked
+					
+					>
+
+				
+					<span
+						>
+					</span>
+				
+
+				Гора-Колокол
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__checkbox-label"
+				 for="checkbox__checklist-slide-park">
+
+				<input
+					
+					 type="checkbox"
+					 name="slide-park"
+					 id="checkbox__checklist-slide-park"
+					
+					
+					 value="slide-park"
+					
+					
+					
+					
+					 checked
+					
+					>
+
+				
+					<span
+						>
+					</span>
+				
+
+				Слайд-парк
+
+			</label>
+		
+	
+
+ 
+				
+					
+	
+		
+			<label
+				 class="feedback-form__checkbox-label"
+				 for="checkbox__checklist-red-rocks">
+
+				<input
+					
+					 type="checkbox"
+					 name="red-rocks"
+					 id="checkbox__checklist-red-rocks"
+					
+					
+					 value="red-rocks"
+					
+					
+					
+					
+					 checked
+					
+					>
+
+				
+					<span
+						>
+					</span>
+				
+
+				Красные скалы
+
+			</label>
+		
+	
+
+ 
+				
+			</fieldset>
+		
+			<fieldset class="feedback-form__user-comment">
+				<legend>Опишите свои эмоции:</legend>
+				
+					
+	
+		<label
+			 class="visually-hidden"
+			 for="textarea-comment">
+		</label>
+
+		<textarea style="resize: none;"
+			
+			 type="textarea"
+			 name="user-comment"
+			 id="textarea-comment"
+			 placeholder="Опишите подробно все свои восторги"
+			
+			
+			
+			
+			
+			
+			
+			
+			>
+		</textarea>
+	
+
+ 
+				
+			</fieldset>
+		
+		<button class="feedback-form__submit button">
+			Отправить отзыв	
+		</button>	
+	</form>
+
+</section>
+
+
+
+
   </main>
 
 
@@ -194,9 +721,9 @@
         <a class="button" href="twitter.com" aria-label="Твитер">
           
 	<svg
-		class=""
-		width="17.5"
-		height="14.57">
+		
+		 width="17.5"
+		 height="14.57">
 		<use xlink:href="img/sprite.svg#icon-twitter"></use>
 	</svg>
 
@@ -207,9 +734,9 @@
         <a class="button" href="facebook.com" aria-label="Фейсбук">
           
 	<svg
-		class=""
-		width="8.7"
-		height="19">
+		
+		 width="8.7"
+		 height="19">
 		<use xlink:href="img/sprite.svg#icon-facebook"></use>
 	</svg>
 
@@ -220,9 +747,9 @@
         <a class="button" href="youtube.com" aria-label="Ютуб">
           
 	<svg
-		class=""
-		width="20"
-		height="14">
+		
+		 width="20"
+		 height="14">
 		<use xlink:href="img/sprite.svg#icon-youtube"></use>
 	</svg>
 
@@ -235,9 +762,9 @@
     Разработано
     
 	<svg
-		class="footer__copyright-icon"
-		width="27"
-		height="34">
+		 class="footer__copyright-icon"
+		 width="27"
+		 height="34">
 		<use xlink:href="img/sprite.svg#htmlacademy"></use>
 	</svg>
 
