@@ -115,6 +115,43 @@
 				{{ args.label.text }}
 
 			</label>
+
+		{% elif args.textPosition == "top" %}
+			<label
+				{% if args.label.class %} class="{{ args.label.class }}"{% endif %}
+				{% if args.label.for %} for="{{ args.label.for }}"{% endif %}>
+				{{ args.label.text }}
+			</label>
+
+			<input
+				{% if args.input.class %} class="{{ args.input.class }}"{% endif %}
+				{% if args.input.type %} type="{{ args.input.type }}"{% endif %}
+				{% if args.input.name %} name="{{ args.input.name }}"{% endif %}
+				{% if args.input.id %} id="{{ args.input.id }}"{% endif %}
+				{% if args.input.placeholder %} placeholder="{{ args.input.placeholder }}"{% endif %}
+				{% if args.input.pattern %} pattern="{{ args.input.pattern }}"{% endif %}
+				{% if args.input.value %} value="{{ args.input.value }}"{% endif %}
+				{% if args.input.minlength %} minlength="{{ args.input.minlength }}"{% endif %}
+				{% if args.input.maxlength %} maxlength="{{ args.input.maxlength }}"{% endif %}
+				{% if args.input.min %} min="{{ args.input.min }}"{% endif %}
+				{% if args.input.max %} max="{{ args.input.max }}"{% endif %}
+				{% if args.input.checked %} {{ args.input.checked }}{% endif %}
+				{% if args.input.disabled %} {{ args.input.disabled }}{% endif %}
+				{% if args.input.required %} {{ args.input.required }}{% endif %}>
+
+			{% if args.input.icon.type == "css" %}
+				<span
+					{% if args.input.icon.class %} class="{{args.input.icon.class}}"{% endif %}>
+				</span>
+			{% elif args.input.icon.type == "svg" %}
+				{{sprite({
+					name: args.input.icon.name,
+					width: args.input.icon.width,
+					height: args.input.icon.height
+				})}}
+			{% endif %}
+
+
 		{% else %}
 			<label
 				{% if args.label.class %} class="{{ args.label.class }}"{% endif %}

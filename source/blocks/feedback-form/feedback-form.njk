@@ -10,7 +10,10 @@
 		formData: [
 			{
 				class: "feedback-form__user-fullname",
-				legend: "Представьтесь:",
+				legend: {
+					text: "Представьтесь:",
+					class: "feedback-form__legend"
+				},
 				inputs: [
 					{
 						label: {
@@ -60,7 +63,11 @@
 			},
 			{
 				class: "feedback-form__user-contacts",
-				legend: "Контактная информация:",
+				textPosition: "top",
+				legend: {
+					text: "Контактная информация:",
+					class: "feedback-form__legend"
+				},
 				inputs: [
 					{
 						label: {
@@ -110,7 +117,10 @@
 			},
 			{
 				class: "feedback-form__user-impressions",
-				legend: "Ваше общее впечатление:",
+				legend: {
+					text: "Ваше общее впечатление:",
+					class: "feedback-form__legend"
+				},
 				textPosition: "right",
 				inputs: [
 					{
@@ -173,7 +183,10 @@
 			},
 			{
 				class: "feedback-form__user-checklist",
-				legend: "Посещенные достопримечательности:",
+				legend: {
+					text: "Посещенные достопримечательности:",
+					class: "feedback-form__legend"
+				},
 				textPosition: "right",
 				inputs: [
 					{
@@ -252,7 +265,10 @@
 			},
 			{
 				class: "feedback-form__user-comment",
-				legend: "Опишите свои эмоции:",
+				legend: {
+					text: "Опишите свои эмоции:",
+					class: "feedback-form__legend"
+				},
 				inputs: [
 					{
 						label: {
@@ -284,22 +300,40 @@
 
 	<form action="test.php" class="feedback-form__form">
 		{%for fieldsetItem in data.formData%}
-			<fieldset class="{{fieldsetItem.class}}">
-				<legend>{{fieldsetItem.legend}}</legend>
-				{%for itemInputs in fieldsetItem.inputs%}
-					{{
-						mixins.input({
-							label: itemInputs.label,
-							input: itemInputs.input,
-							textPosition: fieldsetItem.textPosition
-						})
-					}} 
-				{%endfor%}
-			</fieldset>
+			{% if fieldsetItem != data.formData | getLastElement %}
+				<div class="feedback-form__fieldset__wrapper-line">
+			{% else %}
+				<div class="feedback-form__fieldset__wrapper-line feedback-form__fieldset__wrapper-line--none">
+			{% endif %}
+				<fieldset class="feedback-form__fieldset {{fieldsetItem.class}}">
+					<legend class="{{fieldsetItem.legend.class}}">{{fieldsetItem.legend.text}}</legend>
+					{% for itemInputs in fieldsetItem.inputs %}
+						{% if fieldsetItem.textPosition == "top" %}
+							<div class="feedback-form__user-contacts-wrapper">
+								{{
+									mixins.input({
+										label: itemInputs.label,
+										input: itemInputs.input,
+										textPosition: fieldsetItem.textPosition
+									})
+								}}											
+							</div>
+						{% else %}
+							{{
+								mixins.input({
+									label: itemInputs.label,
+									input: itemInputs.input,
+									textPosition: fieldsetItem.textPosition
+								})
+							}}					
+						{% endif %}
+					{% endfor %}
+				</fieldset>
+			</div>
 		{% endfor %}
 		<button class="feedback-form__submit button">
-			{{data.btnSubmitText}}	
-		</button>	
+			{{data.btnSubmitText}}
+		</button>
 	</form>
 
 </section>

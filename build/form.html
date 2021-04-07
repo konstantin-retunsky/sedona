@@ -193,10 +193,14 @@
 
 	<form action="test.php" class="feedback-form__form">
 		
-			<fieldset class="feedback-form__user-fullname">
-				<legend>Представьтесь:</legend>
-				
+			
+				<div class="feedback-form__fieldset__wrapper-line">
+			
+				<fieldset class="feedback-form__fieldset feedback-form__user-fullname">
+					<legend class="feedback-form__legend">Представьтесь:</legend>
 					
+						
+							
 	
 		
 			<label
@@ -228,9 +232,11 @@
 		
 	
 
- 
-				
 					
+						
+					
+						
+							
 	
 		
 			<label
@@ -262,9 +268,11 @@
 		
 	
 
- 
-				
 					
+						
+					
+						
+							
 	
 		
 			<label
@@ -296,41 +304,47 @@
 		
 	
 
- 
-				
-			</fieldset>
-		
-			<fieldset class="feedback-form__user-contacts">
-				<legend>Контактная информация:</legend>
-				
 					
+						
+					
+				</fieldset>
+			</div>
+		
+			
+				<div class="feedback-form__fieldset__wrapper-line">
+			
+				<fieldset class="feedback-form__fieldset feedback-form__user-contacts">
+					<legend class="feedback-form__legend">Контактная информация:</legend>
+					
+						
+							<div class="feedback-form__user-contacts-wrapper">
+								
 	
 		
 			<label
 				 class="feedback-form__text-label"
 				 for="input__user-phone">
-
-
 				Контактный телефон*:
+			</label>
 
-				<input
-					
-					 type="tel"
-					 name="user-phone"
-					 id="input__user-phone"
-					 placeholder="Введите ваш телефон"
-					 pattern="d+"
-					
-					
-					
-					
-					
-					
-					
-					 required>
-
+			<input
 				
-					
+				 type="tel"
+				 name="user-phone"
+				 id="input__user-phone"
+				 placeholder="Введите ваш телефон"
+				 pattern="d+"
+				
+				
+				
+				
+				
+				
+				
+				 required>
+
+			
+				
 	<svg
 		
 		 width="18"
@@ -338,42 +352,45 @@
 		<use xlink:href="img/sprite.svg#icon-phone"></use>
 	</svg>
 
-				
+			
 
-			</label>
+
 		
 	
 
- 
-				
+											
+							</div>
+						
 					
+						
+							<div class="feedback-form__user-contacts-wrapper">
+								
 	
 		
 			<label
 				 class="feedback-form__text-label"
 				 for="input__user-email">
-
-
 				Электронная почта*:
+			</label>
 
-				<input
-					
-					 type="email"
-					 name="user-email"
-					 id="input__user-email"
-					 placeholder="Введите e-mail"
-					 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,6}$"
-					
-					
-					
-					
-					
-					
-					
-					 required>
-
+			<input
 				
-					
+				 type="email"
+				 name="user-email"
+				 id="input__user-email"
+				 placeholder="Введите e-mail"
+				 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,6}$"
+				
+				
+				
+				
+				
+				
+				
+				 required>
+
+			
+				
 	<svg
 		
 		 width="16"
@@ -381,20 +398,27 @@
 		<use xlink:href="img/sprite.svg#icon-email"></use>
 	</svg>
 
-				
+			
 
-			</label>
+
 		
 	
 
- 
-				
-			</fieldset>
-		
-			<fieldset class="feedback-form__user-impressions">
-				<legend>Ваше общее впечатление:</legend>
-				
+											
+							</div>
+						
 					
+				</fieldset>
+			</div>
+		
+			
+				<div class="feedback-form__fieldset__wrapper-line">
+			
+				<fieldset class="feedback-form__fieldset feedback-form__user-impressions">
+					<legend class="feedback-form__legend">Ваше общее впечатление:</legend>
+					
+						
+							
 	
 		
 			<label
@@ -426,12 +450,15 @@
 				Скорее положительное
 
 			</label>
+
 		
 	
 
- 
-				
 					
+						
+					
+						
+							
 	
 		
 			<label
@@ -463,12 +490,15 @@
 				Скорее отрицательное
 
 			</label>
+
 		
 	
 
- 
-				
 					
+						
+					
+						
+							
 	
 		
 			<label
@@ -500,17 +530,24 @@
 				Затрудняюсь ответить
 
 			</label>
+
 		
 	
 
- 
-				
-			</fieldset>
-		
-			<fieldset class="feedback-form__user-checklist">
-				<legend>Посещенные достопримечательности:</legend>
-				
 					
+						
+					
+				</fieldset>
+			</div>
+		
+			
+				<div class="feedback-form__fieldset__wrapper-line">
+			
+				<fieldset class="feedback-form__fieldset feedback-form__user-checklist">
+					<legend class="feedback-form__legend">Посещенные достопримечательности:</legend>
+					
+						
+							
 	
 		
 			<label
@@ -542,12 +579,15 @@
 				Мост Дьявола
 
 			</label>
+
 		
 	
 
- 
-				
 					
+						
+					
+						
+							
 	
 		
 			<label
@@ -579,12 +619,15 @@
 				Гора-Колокол
 
 			</label>
+
 		
 	
 
- 
-				
 					
+						
+					
+						
+							
 	
 		
 			<label
@@ -616,12 +659,15 @@
 				Слайд-парк
 
 			</label>
+
 		
 	
 
- 
-				
 					
+						
+					
+						
+							
 	
 		
 			<label
@@ -653,17 +699,24 @@
 				Красные скалы
 
 			</label>
+
 		
 	
 
- 
-				
-			</fieldset>
-		
-			<fieldset class="feedback-form__user-comment">
-				<legend>Опишите свои эмоции:</legend>
-				
 					
+						
+					
+				</fieldset>
+			</div>
+		
+			
+				<div class="feedback-form__fieldset__wrapper-line feedback-form__fieldset__wrapper-line--none">
+			
+				<fieldset class="feedback-form__fieldset feedback-form__user-comment">
+					<legend class="feedback-form__legend">Опишите свои эмоции:</legend>
+					
+						
+							
 	
 		<label
 			 class="visually-hidden"
@@ -688,13 +741,15 @@
 		</textarea>
 	
 
- 
-				
-			</fieldset>
+					
+						
+					
+				</fieldset>
+			</div>
 		
 		<button class="feedback-form__submit button">
-			Отправить отзыв	
-		</button>	
+			Отправить отзыв
+		</button>
 	</form>
 
 </section>
