@@ -1,4 +1,3 @@
-
 {% import "../../global/page/mixins.njk" as mixins %}
 
 {% set btnSubmitText = "Отправить отзыв" %}
@@ -88,6 +87,7 @@
 						required: "required",
 
 						icon: {
+							wrapperClass: "feedback-form__icon-wrapper",
 							type: "svg",
 							name: "icon-phone",
 							width: 18,
@@ -111,6 +111,7 @@
 						required: "required",
 
 						icon: {
+							wrapperClass: "feedback-form__icon-wrapper",
 							type: "svg",
 							name: "icon-email",
 							width: 16,
@@ -136,6 +137,7 @@
 						class: "feedback-form__radio-label"
 					},
 					input: {
+						class: "feedback-form__input-radio",
 						id: "radio__impression-good",
 						name: "impression",
 						type: "radio",
@@ -156,6 +158,7 @@
 						class: "feedback-form__radio-label"
 					},
 					input: {
+						class: "feedback-form__input-radio",
 						id: "radio__impression-bad",
 						name: "impression",
 						type: "radio",
@@ -175,6 +178,7 @@
 						class: "feedback-form__radio-label"
 					},
 					input: {
+						class: "feedback-form__input-radio",
 						id: "radio__impression-unknown",
 						name: "impression",
 						type: "radio",

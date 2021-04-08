@@ -82,6 +82,15 @@
 		<span
 			{% if args.class %} class="{{args.class}}"{% endif %}>
 		</span>
+	{% elif args.wrapperClass %}
+		<div class="{{ args.wrapperClass }}">
+			{{sprite({
+				name: args.name,
+				width: args.width,
+				height: args.height,
+				class: args.class
+			})}}
+		</div>
 	{% else %}
 		{{sprite({
 			name: args.name,
