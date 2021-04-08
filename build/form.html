@@ -179,172 +179,189 @@
 
 
 
-
-
-<section class="feedback-form">
-	<h1 class="feedback-form__title">
+<section class=feedback>
+	<h1 class="feedback__title">
 		Оставьте свой отзыв
 	</h1>
-	<p class="feedback-form__text">
+	<p class="feedback__text">
 		Помогите нашим отелям стать лучше! оставьте отзыв о них,а также о посещенных вами достопримечательностях
 	</p>
 
 	<h2 class="visually-hidden">Форма обратной связи</h2>
+	
 
-	<form action="test.php" class="feedback-form__form">
+
+
+
+
+
+
+<form class="feedback-form" action="test.php">
+	<ul class="feedback-form__list">
 		
-			
-				<div class="feedback-form__fieldset__wrapper-line">
-			
+			<li class="feedback-form__list-item">
 				<fieldset class="feedback-form__fieldset feedback-form__user-fullname">
-					<legend class="feedback-form__legend">Представьтесь:</legend>
+					<legend class="feedback-form__legend">
+						Представьтесь:
+					</legend>
 					
 						
-							
-	
-		
-			<label
-				 class="feedback-form__text-label"
-				 for="input__user-name">
+							<div class="feedback-form__field-wrapper">
+								
+		<label
+			 class="feedback-form__text-label"
+			 for="input__user-name">
 
+			
 
-				ИМЯ*:
+			
 
-				<input
-					
-					 type="text"
-					 name="user-name"
-					 id="input__user-name"
-					 placeholder="Введите ваше имя"
-					 pattern="[A-Za-zА-Яа-яЁё]{1,}"
-					
-					
-					
-					
-					
-					
-					
-					 required>
+			ИМЯ*:
+		</label>
 
-				
-
-			</label>
-		
+								
 	
 
-					
-						
-					
-						
-							
-	
+	<input
 		
-			<label
-				 class="feedback-form__text-label"
-				 for="input__last-name">
-
-
-				ФАМИЛИЯ*:
-
-				<input
-					
-					 type="text"
-					 name="last-name"
-					 id="input__last-name"
-					 placeholder="Введите вашу фамилию"
-					 pattern="[A-Za-zА-Яа-яЁё]{1,}"
-					
-					
-					
-					
-					
-					
-					
-					 required>
-
-				
-
-			</label>
+		 class="feedback-form__field-text"
+		 id="input__user-name"
+		 type="text"
+		 name="user-name"
 		
-	
+		 placeholder="Введите ваше имя"
+		 pattern="[A-Za-zА-Яа-яЁё]{1,}"
+		
+		
+		
+		
+		
+		
+		 required>
 
-					
+							</div>
 						
 					
 						
-							
-	
-		
-			<label
-				 class="feedback-form__text-label"
-				 for="input__second-name">
+							<div class="feedback-form__field-wrapper">
+								
+		<label
+			 class="feedback-form__text-label"
+			 for="input__last-name">
 
+			
 
-				Отчество:
+			
 
-				<input
-					
-					 type="text"
-					 name="second-name"
-					 id="input__second-name"
-					 placeholder="Введите ваше отчество"
-					 pattern="[A-Za-zА-Яа-яЁё]*"
-					
-					
-					
-					
-					
-					
-					
-					>
+			ФАМИЛИЯ*:
+		</label>
 
-				
-
-			</label>
-		
+								
 	
 
+	<input
+		
+		 class="feedback-form__field-text"
+		 id="input__last-name"
+		 type="text"
+		 name="last-name"
+		
+		 placeholder="Введите вашу фамилию"
+		 pattern="[A-Za-zА-Яа-яЁё]{1,}"
+		
+		
+		
+		
+		
+		
+		 required>
+
+							</div>
+						
 					
+						
+							<div class="feedback-form__field-wrapper">
+								
+		<label
+			 class="feedback-form__text-label"
+			 for="input__second-name">
+
+			
+
+			
+
+			Отчество:
+		</label>
+
+								
+	
+
+	<input
+		
+		 class="feedback-form__field-text"
+		 id="input__second-name"
+		 type="text"
+		 name="second-name"
+		
+		 placeholder="Введите ваше отчество"
+		 pattern="[A-Za-zА-Яа-яЁё]*"
+		
+		
+		
+		
+		
+		
+		>
+
+							</div>
 						
 					
 				</fieldset>
-			</div>
+			</li>
 		
-			
-				<div class="feedback-form__fieldset__wrapper-line">
-			
+			<li class="feedback-form__list-item">
 				<fieldset class="feedback-form__fieldset feedback-form__user-contacts">
-					<legend class="feedback-form__legend">Контактная информация:</legend>
+					<legend class="feedback-form__legend">
+						Контактная информация:
+					</legend>
 					
 						
-							<div class="feedback-form__user-contacts-wrapper">
+							
+		<label
+			 class="feedback-form__text-label"
+			 for="input__user-phone">
+
+			
+
+			
+
+			Контактный телефон*:
+		</label>
+
+							<div class="feedback-form__field-wrapper">
+								
+	
+
+	<input
+		
+		 class="feedback-form__field-text"
+		 id="input__user-phone"
+		 type="tel"
+		 name="user-phone"
+		
+		 placeholder="Введите ваш телефон"
+		 pattern="d+"
+		
+		
+		
+		
+		
+		
+		 required>
+
 								
 	
 		
-			<label
-				 class="feedback-form__text-label"
-				 for="input__user-phone">
-				Контактный телефон*:
-			</label>
-
-			<input
-				
-				 type="tel"
-				 name="user-phone"
-				 id="input__user-phone"
-				 placeholder="Введите ваш телефон"
-				 pattern="d+"
-				
-				
-				
-				
-				
-				
-				
-				 required>
-
-			
-				
 	<svg
 		
 		 width="18"
@@ -352,45 +369,48 @@
 		<use xlink:href="img/sprite.svg#icon-phone"></use>
 	</svg>
 
-			
-
-
-		
 	
 
-											
 							</div>
 						
 					
 						
-							<div class="feedback-form__user-contacts-wrapper">
+							
+		<label
+			 class="feedback-form__text-label"
+			 for="input__user-email">
+
+			
+
+			
+
+			Электронная почта*:
+		</label>
+
+							<div class="feedback-form__field-wrapper">
+								
+	
+
+	<input
+		
+		 class="feedback-form__field-text"
+		 id="input__user-email"
+		 type="email"
+		 name="user-email"
+		
+		 placeholder="Введите e-mail"
+		 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,6}$"
+		
+		
+		
+		
+		
+		
+		 required>
+
 								
 	
 		
-			<label
-				 class="feedback-form__text-label"
-				 for="input__user-email">
-				Электронная почта*:
-			</label>
-
-			<input
-				
-				 type="email"
-				 name="user-email"
-				 id="input__user-email"
-				 placeholder="Введите e-mail"
-				 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,6}$"
-				
-				
-				
-				
-				
-				
-				
-				 required>
-
-			
-				
 	<svg
 		
 		 width="16"
@@ -398,364 +418,384 @@
 		<use xlink:href="img/sprite.svg#icon-email"></use>
 	</svg>
 
-			
-
-
-		
 	
 
-											
 							</div>
 						
 					
 				</fieldset>
-			</div>
+			</li>
 		
-			
-				<div class="feedback-form__fieldset__wrapper-line">
-			
+			<li class="feedback-form__list-item">
 				<fieldset class="feedback-form__fieldset feedback-form__user-impressions">
-					<legend class="feedback-form__legend">Ваше общее впечатление:</legend>
+					<legend class="feedback-form__legend">
+						Ваше общее впечатление:
+					</legend>
 					
 						
 							
-	
-		
-			<label
-				 class="feedback-form__radio-label"
-				 for="radio__impression-good">
-
-				<input
-					
-					 type="radio"
-					 name="impression"
-					 id="radio__impression-good"
-					
-					
-					 value="good"
-					
-					
-					
-					
-					 checked
-					
-					 required>
-
-				
-					<span
-						>
-					</span>
-				
-
-				Скорее положительное
-
-			</label>
-
-		
-	
-
-					
-						
-					
-						
-							
-	
-		
-			<label
-				 class="feedback-form__radio-label"
-				 for="radio__impression-bad">
-
-				<input
-					
-					 type="radio"
-					 name="impression"
-					 id="radio__impression-bad"
-					
-					
-					 value="bad"
-					
-					
-					
-					
-					
-					
-					 required>
-
-				
-					<span
-						>
-					</span>
-				
-
-				Скорее отрицательное
-
-			</label>
-
-		
-	
-
-					
-						
-					
-						
-							
-	
-		
-			<label
-				 class="feedback-form__radio-label"
-				 for="radio__impression-unknown">
-
-				<input
-					
-					 type="radio"
-					 name="impression"
-					 id="radio__impression-unknown"
-					
-					
-					 value="unknown"
-					
-					
-					
-					
-					 checked
-					
-					 required>
-
-				
-					<span
-						>
-					</span>
-				
-
-				Затрудняюсь ответить
-
-			</label>
-
-		
-	
-
-					
-						
-					
-				</fieldset>
-			</div>
-		
-			
-				<div class="feedback-form__fieldset__wrapper-line">
-			
-				<fieldset class="feedback-form__fieldset feedback-form__user-checklist">
-					<legend class="feedback-form__legend">Посещенные достопримечательности:</legend>
-					
-						
-							
-	
-		
-			<label
-				 class="feedback-form__checkbox-label"
-				 for="checkbox__checklist-devils-bridge">
-
-				<input
-					
-					 type="checkbox"
-					 name="devils-bridge"
-					 id="checkbox__checklist-devils-bridge"
-					
-					
-					 value="devils-bridge"
-					
-					
-					
-					
-					 checked
-					
-					>
-
-				
-					<span
-						>
-					</span>
-				
-
-				Мост Дьявола
-
-			</label>
-
-		
-	
-
-					
-						
-					
-						
-							
-	
-		
-			<label
-				 class="feedback-form__checkbox-label"
-				 for="checkbox__checklist-mountain-bell">
-
-				<input
-					
-					 type="checkbox"
-					 name="mountain-bell"
-					 id="checkbox__checklist-mountain-bell"
-					
-					
-					 value="mountain-bell"
-					
-					
-					
-					
-					 checked
-					
-					>
-
-				
-					<span
-						>
-					</span>
-				
-
-				Гора-Колокол
-
-			</label>
-
-		
-	
-
-					
-						
-					
-						
-							
-	
-		
-			<label
-				 class="feedback-form__checkbox-label"
-				 for="checkbox__checklist-slide-park">
-
-				<input
-					
-					 type="checkbox"
-					 name="slide-park"
-					 id="checkbox__checklist-slide-park"
-					
-					
-					 value="slide-park"
-					
-					
-					
-					
-					 checked
-					
-					>
-
-				
-					<span
-						>
-					</span>
-				
-
-				Слайд-парк
-
-			</label>
-
-		
-	
-
-					
-						
-					
-						
-							
-	
-		
-			<label
-				 class="feedback-form__checkbox-label"
-				 for="checkbox__checklist-red-rocks">
-
-				<input
-					
-					 type="checkbox"
-					 name="red-rocks"
-					 id="checkbox__checklist-red-rocks"
-					
-					
-					 value="red-rocks"
-					
-					
-					
-					
-					 checked
-					
-					>
-
-				
-					<span
-						>
-					</span>
-				
-
-				Красные скалы
-
-			</label>
-
-		
-	
-
-					
-						
-					
-				</fieldset>
-			</div>
-		
-			
-				<div class="feedback-form__fieldset__wrapper-line feedback-form__fieldset__wrapper-line--none">
-			
-				<fieldset class="feedback-form__fieldset feedback-form__user-comment">
-					<legend class="feedback-form__legend">Опишите свои эмоции:</legend>
-					
-						
-							
-	
 		<label
-			 class="visually-hidden"
-			 for="textarea-comment">
+			 class="feedback-form__radio-label"
+			 for="radio__impression-good">
+
+			
+				
+	
+
+	<input
+		
+		
+		 id="radio__impression-good"
+		 type="radio"
+		 name="impression"
+		 value="good"
+		
+		
+		
+		
+		
+		
+		 checked
+		
+		 required>
+
+			
+
+			
+				
+	
+		<span
+			 class="feedback-form__radio-icon">
+		</span>
+	
+
+			
+
+			Скорее положительное
 		</label>
 
-		<textarea style="resize: none;"
+						
+					
+						
+							
+		<label
+			 class="feedback-form__radio-label"
+			 for="radio__impression-bad">
+
 			
-			 type="textarea"
-			 name="user-comment"
-			 id="textarea-comment"
-			 placeholder="Опишите подробно все свои восторги"
-			
-			
-			
-			
-			
-			
-			
-			
-			>
-		</textarea>
+				
 	
 
+	<input
+		
+		
+		 id="radio__impression-bad"
+		 type="radio"
+		 name="impression"
+		 value="bad"
+		
+		
+		
+		
+		
+		
+		
+		
+		 required>
+
+			
+
+			
+				
+	
+		<span
+			 class="feedback-form__radio-icon">
+		</span>
+	
+
+			
+
+			Скорее отрицательное
+		</label>
+
+						
 					
+						
+							
+		<label
+			 class="feedback-form__radio-label"
+			 for="radio__impression-unknown">
+
+			
+				
+	
+
+	<input
+		
+		
+		 id="radio__impression-unknown"
+		 type="radio"
+		 name="impression"
+		 value="unknown"
+		
+		
+		
+		
+		
+		
+		 checked
+		
+		 required>
+
+			
+
+			
+				
+	
+		<span
+			 class="feedback-form__radio-icon">
+		</span>
+	
+
+			
+
+			Затрудняюсь ответить
+		</label>
+
 						
 					
 				</fieldset>
-			</div>
+			</li>
 		
-		<button class="feedback-form__submit button">
+			<li class="feedback-form__list-item">
+				<fieldset class="feedback-form__fieldset feedback-form__user-checklist">
+					<legend class="feedback-form__legend">
+						Посещенные достопримечательности:
+					</legend>
+					
+						
+							
+		<label
+			 class="feedback-form__checkbox-label"
+			 for="checkbox__checklist-devils-bridge">
+
+			
+				
+	
+
+	<input
+		
+		
+		 id="checkbox__checklist-devils-bridge"
+		 type="checkbox"
+		 name="devils-bridge"
+		 value="devils-bridge"
+		
+		
+		
+		
+		
+		
+		 checked
+		
+		>
+
+			
+
+			
+				
+	
+		<span
+			 class="feedback-form__checkbox-icon">
+		</span>
+	
+
+			
+
+			Мост Дьявола
+		</label>
+
+						
+					
+						
+							
+		<label
+			 class="feedback-form__checkbox-label"
+			 for="checkbox__checklist-mountain-bell">
+
+			
+				
+	
+
+	<input
+		
+		
+		 id="checkbox__checklist-mountain-bell"
+		 type="checkbox"
+		 name="mountain-bell"
+		 value="mountain-bell"
+		
+		
+		
+		
+		
+		
+		 checked
+		
+		>
+
+			
+
+			
+				
+	
+		<span
+			 class="feedback-form__checkbox-icon">
+		</span>
+	
+
+			
+
+			Гора-Колокол
+		</label>
+
+						
+					
+						
+							
+		<label
+			 class="feedback-form__checkbox-label"
+			 for="checkbox__checklist-slide-park">
+
+			
+				
+	
+
+	<input
+		
+		
+		 id="checkbox__checklist-slide-park"
+		 type="checkbox"
+		 name="slide-park"
+		 value="slide-park"
+		
+		
+		
+		
+		
+		
+		
+		
+		>
+
+			
+
+			
+				
+	
+		<span
+			 class="feedback-form__checkbox-icon">
+		</span>
+	
+
+			
+
+			Слайд-парк
+		</label>
+
+						
+					
+						
+							
+		<label
+			 class="feedback-form__checkbox-label"
+			 for="checkbox__checklist-red-rocks">
+
+			
+				
+	
+
+	<input
+		
+		
+		 id="checkbox__checklist-red-rocks"
+		 type="checkbox"
+		 name="red-rocks"
+		 value="red-rocks"
+		
+		
+		
+		
+		
+		
+		
+		
+		>
+
+			
+
+			
+				
+	
+		<span
+			 class="feedback-form__checkbox-icon">
+		</span>
+	
+
+			
+
+			Красные скалы
+		</label>
+
+						
+					
+				</fieldset>
+			</li>
+		
+			<li class="feedback-form__list-item">
+				<fieldset class="feedback-form__fieldset feedback-form__user-comment">
+					<legend class="feedback-form__legend">
+						Опишите свои эмоции:
+					</legend>
+					
+						
+							
+	
+
+	<textarea
+		 style="resize: none;" 
+		 class="feedback-form__field-text"
+		 id="textarea-comment"
+		
+		 name="user-comment"
+		
+		 placeholder="Опишите подробно все свои восторги"
+		
+		
+		
+		
+		
+		
+		
+		></textarea>
+
+						
+					
+				</fieldset>
+			</li>
+		
+	</ul>
+	<div class="feedback__submit-wrapper">
+		<button class="feedback__submit button">
 			Отправить отзыв
 		</button>
-	</form>
+		<span class="feedback__required-fields-text">
+			* — обязательные поля
+		</span>
+	</div>
+</form>
 
 </section>
-
-
-
 
   </main>
 
