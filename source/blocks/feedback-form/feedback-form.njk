@@ -1,390 +1,349 @@
-{# https://github.com/pepelsbey/playground/blob/master/14/inline.html #}
 
 {% import "../../global/page/mixins.njk" as mixins %}
 
+{% set btnSubmitText = "Отправить отзыв" %}
+{% set requiredFieldsText = "* — обязательные поля" %}
+
 {%
-	set data = {
-		sectionTitle: "Оставьте свой отзыв",
-		sectionText: "Помогите нашим отелям стать лучше! оставьте отзыв о них,а также о посещенных вами достопримечательностях",
-		btnSubmitText: "Отправить отзыв",
-		formData: [
-			{
-				class: "feedback-form__user-fullname",
-				legend: {
-					text: "Представьтесь:",
-					class: "feedback-form__legend"
-				},
-				inputs: [
-					{
-						label: {
-							text: "ИМЯ*:",
-							for: "input__user-name",
-							class: "feedback-form__text-label"
-						},
-						input: {
-							id: "input__user-name",
-							name: "user-name",
-							placeholder: "Введите ваше имя",
-							type: "text",
-							pattern: "[A-Za-zА-Яа-яЁё]{1,}",
-							required: "required"
-						}
-					}, 
-					{
-						label: {
-							text: "ФАМИЛИЯ*:",
-							for: "input__last-name",
-							class: "feedback-form__text-label"
-						},
-						input: {
-							id: "input__last-name",
-							name: "last-name",
-							placeholder: "Введите вашу фамилию",
-							type: "text",
-							pattern: "[A-Za-zА-Яа-яЁё]{1,}",
-							required: "required"
-						}
+	set fieldsets = [
+		{
+			class: "feedback-form__fieldset feedback-form__user-fullname",
+			legend: {
+				text: "Представьтесь:",
+				class: "feedback-form__legend"
+			},
+			typeFields: "text",
+			inputs: [
+				{
+					label: {
+						text: "ИМЯ*:",
+						for: "input__user-name",
+						class: "feedback-form__text-label"
 					},
-					{
-						label: {
-							text: "Отчество:",
-							for: "input__second-name",
-							class: "feedback-form__text-label"
-						},
-						input: {
-							id: "input__second-name",
-							name: "second-name",
-							placeholder: "Введите ваше отчество",
-							type: "text",
-							pattern: "[A-Za-zА-Яа-яЁё]*"
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__user-name",
+						name: "user-name",
+						placeholder: "Введите ваше имя",
+						type: "text",
+						pattern: "[A-Za-zА-Яа-яЁё]{1,}",
+						required: "required"
+					}
+				}, 
+				{
+					label: {
+						text: "ФАМИЛИЯ*:",
+						for: "input__last-name",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__last-name",
+						name: "last-name",
+						placeholder: "Введите вашу фамилию",
+						type: "text",
+						pattern: "[A-Za-zА-Яа-яЁё]{1,}",
+						required: "required"
+					}
+				},
+				{
+					label: {
+						text: "Отчество:",
+						for: "input__second-name",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__second-name",
+						name: "second-name",
+						placeholder: "Введите ваше отчество",
+						type: "text",
+						pattern: "[A-Za-zА-Яа-яЁё]*"
+					}
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-contacts",
+			textPosition: "top",
+			typeFields: "contacts",
+			legend: {
+				text: "Контактная информация:",
+				class: "feedback-form__legend"
+			},
+			inputs: [
+				{
+					label: {
+						text: "Контактный телефон*:",
+						for: "input__user-phone",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__user-phone",
+						name: "user-phone",
+						placeholder: "Введите ваш телефон",
+						type: "tel",
+						pattern: "\d+",
+						required: "required",
+
+						icon: {
+							type: "svg",
+							name: "icon-phone",
+							width: 18,
+							height: 18
 						}
 					}
-				]
-			},
-			{
-				class: "feedback-form__user-contacts",
-				textPosition: "top",
-				legend: {
-					text: "Контактная информация:",
-					class: "feedback-form__legend"
-				},
-				inputs: [
-					{
-						label: {
-							text: "Контактный телефон*:",
-							for: "input__user-phone",
-							class: "feedback-form__text-label"
-						},
-						input: {
-							id: "input__user-phone",
-							name: "user-phone",
-							placeholder: "Введите ваш телефон",
-							type: "tel",
-							pattern: "\d+",
-							required: "required",
+				}, 
+				{
+					label: {
+						text: "Электронная почта*:",
+						for: "input__user-email",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__user-email",
+						name: "user-email",
+						placeholder: "Введите e-mail",
+						type: "email",
+						pattern: "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$",
+						required: "required",
 
-							icon: {
-								type: "svg",
-								name: "icon-phone",
-								width: 18,
-								height: 18
-							}
-						}
-					}, 
-					{
-						label: {
-							text: "Электронная почта*:",
-							for: "input__user-email",
-							class: "feedback-form__text-label"
-						},
-						input: {
-							id: "input__user-email",
-							name: "user-email",
-							placeholder: "Введите e-mail",
-							type: "email",
-							pattern: "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$",
-							required: "required",
-
-							icon: {
-								type: "svg",
-								name: "icon-email",
-								width: 16,
-								height: 12
-							}
+						icon: {
+							type: "svg",
+							name: "icon-email",
+							width: 16,
+							height: 12
 						}
 					}
-				]
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-impressions",
+			legend: {
+				text: "Ваше общее впечатление:",
+				class: "feedback-form__legend"
 			},
-			{
-				class: "feedback-form__user-impressions",
-				legend: {
-					text: "Ваше общее впечатление:",
-					class: "feedback-form__legend"
-				},
-				textPosition: "right",
-				inputs: [
-					{
-						label: {
-							text: "Скорее положительное",
-							for: "radio__impression-good",
-							class: "feedback-form__radio-label"
-						},
-						input: {
-							id: "radio__impression-good",
-							name: "impression",
-							type: "radio",
-							required: "required",
-							checked: "checked",
-							value: "good",
-
-							icon: {
-								type: "css"
-							}
-						}
-					}, 
-					{
-						label: {
-							text: "Скорее отрицательное",
-							for: "radio__impression-bad",
-							class: "feedback-form__radio-label"
-						},
-						input: {
-							id: "radio__impression-bad",
-							name: "impression",
-							type: "radio",
-							required: "required",
-							value: "bad",
-
-							icon: {
-								type: "css"
-							}
-						}
+			textPosition: "right",
+			typeFields: "checkbox-radio",
+			inputs: [
+				{
+					label: {
+						text: "Скорее положительное",
+						for: "radio__impression-good",
+						class: "feedback-form__radio-label"
 					},
-					{
-						label: {
-							text: "Затрудняюсь ответить",
-							for: "radio__impression-unknown",
-							class: "feedback-form__radio-label"
-						},
-						input: {
-							id: "radio__impression-unknown",
-							name: "impression",
-							type: "radio",
-							required: "required",
-							checked: "checked",
-							value: "unknown",
+					input: {
+						id: "radio__impression-good",
+						name: "impression",
+						type: "radio",
+						required: "required",
+						checked: "checked",
+						value: "good",
 
-							icon: {
-								type: "css"
-							}
+						icon: {
+							type: "css",
+							class: "feedback-form__radio-icon"
 						}
 					}
-				]
-			},
-			{
-				class: "feedback-form__user-checklist",
-				legend: {
-					text: "Посещенные достопримечательности:",
-					class: "feedback-form__legend"
-				},
-				textPosition: "right",
-				inputs: [
-					{
-						label: {
-							text: "Мост Дьявола",
-							for: "checkbox__checklist-devils-bridge",
-							class: "feedback-form__checkbox-label"
-						},
-						input: {
-							id: "checkbox__checklist-devils-bridge",
-							name: "devils-bridge",
-							type: "checkbox",
-							checked: "checked",
-							value: "devils-bridge",
-
-							icon: {
-								type: "css"
-							}
-						}
-					}, 
-					{
-						label: {
-							text: "Гора-Колокол",
-							for: "checkbox__checklist-mountain-bell",
-							class: "feedback-form__checkbox-label"
-						},
-						input: {
-							id: "checkbox__checklist-mountain-bell",
-							name: "mountain-bell",
-							type: "checkbox",
-							checked: "checked",
-							value: "mountain-bell",
-
-							icon: {
-								type: "css"
-							}
-						}
+				}, 
+				{
+					label: {
+						text: "Скорее отрицательное",
+						for: "radio__impression-bad",
+						class: "feedback-form__radio-label"
 					},
-					{
-						label: {
-							text: "Слайд-парк",
-							for: "checkbox__checklist-slide-park",
-							class: "feedback-form__checkbox-label"
-						},
-						input: {
-							id: "checkbox__checklist-slide-park",
-							name: "slide-park",
-							type: "checkbox",
-							checked: "checked",
-							value: "slide-park",
+					input: {
+						id: "radio__impression-bad",
+						name: "impression",
+						type: "radio",
+						required: "required",
+						value: "bad",
 
-							icon: {
-								type: "css"
-							}
-						}
-					},
-					{
-						label: {
-							text: "Красные скалы",
-							for: "checkbox__checklist-red-rocks",
-							class: "feedback-form__checkbox-label"
-						},
-						input: {
-							id: "checkbox__checklist-red-rocks",
-							name: "red-rocks",
-							type: "checkbox",
-							checked: "checked",
-							value: "red-rocks",
-
-							icon: {
-								type: "css"
-							}
+						icon: {
+							class: "feedback-form__radio-icon",
+							type: "css"
 						}
 					}
-				]
-			},
-			{
-				class: "feedback-form__user-comment",
-				legend: {
-					text: "Опишите свои эмоции:",
-					class: "feedback-form__legend"
 				},
-				inputs: [
-					{
-						label: {
-							for: "textarea-comment",
-							class: "visually-hidden"
-						},
-						input: {
-							type: "textarea",
-							id: "textarea-comment",
-							name: "user-comment",
-							placeholder: "Опишите подробно все свои восторги"
+				{
+					label: {
+						text: "Затрудняюсь ответить",
+						for: "radio__impression-unknown",
+						class: "feedback-form__radio-label"
+					},
+					input: {
+						id: "radio__impression-unknown",
+						name: "impression",
+						type: "radio",
+						required: "required",
+						checked: "checked",
+						value: "unknown",
+
+						icon: {
+							class: "feedback-form__radio-icon",
+							type: "css"
 						}
-					} 
-				]
-			}
-		]
-	}
+					}
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-checklist",
+			legend: {
+				text: "Посещенные достопримечательности:",
+				class: "feedback-form__legend"
+			},
+			textPosition: "right",
+			typeFields: "checkbox-radio",
+			inputs: [
+				{
+					label: {
+						text: "Мост Дьявола",
+						for: "checkbox__checklist-devils-bridge",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						id: "checkbox__checklist-devils-bridge",
+						name: "devils-bridge",
+						type: "checkbox",
+						checked: "checked",
+						value: "devils-bridge",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				}, 
+				{
+					label: {
+						text: "Гора-Колокол",
+						for: "checkbox__checklist-mountain-bell",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						id: "checkbox__checklist-mountain-bell",
+						name: "mountain-bell",
+						type: "checkbox",
+						checked: "checked",
+						value: "mountain-bell",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				},
+				{
+					label: {
+						text: "Слайд-парк",
+						for: "checkbox__checklist-slide-park",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						id: "checkbox__checklist-slide-park",
+						name: "slide-park",
+						type: "checkbox",
+						value: "slide-park",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				},
+				{
+					label: {
+						text: "Красные скалы",
+						for: "checkbox__checklist-red-rocks",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						id: "checkbox__checklist-red-rocks",
+						name: "red-rocks",
+						type: "checkbox",
+						value: "red-rocks",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-comment",
+			legend: {
+				text: "Опишите свои эмоции:",
+				class: "feedback-form__legend"
+			},
+			inputs: [
+				{
+					label: {
+						for: "textarea-comment",
+						class: "visually-hidden"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						typeTag: "textarea",
+						id: "textarea-comment",
+						name: "user-comment",
+						placeholder: "Опишите подробно все свои восторги"
+					}
+				} 
+			]
+		}
+	]
 %}
 
-<section class="feedback-form">
-	<h1 class="feedback-form__title">
-		{{data.sectionTitle}}
-	</h1>
-	<p class="feedback-form__text">
-		{{data.sectionText}}
-	</p>
-
-	<h2 class="visually-hidden">Форма обратной связи</h2>
-
-	<form action="test.php" class="feedback-form__form">
-		{%for fieldsetItem in data.formData%}
-			{% if fieldsetItem != data.formData | getLastElement %}
-				<div class="feedback-form__fieldset__wrapper-line">
-			{% else %}
-				<div class="feedback-form__fieldset__wrapper-line feedback-form__fieldset__wrapper-line--none">
-			{% endif %}
-				<fieldset class="feedback-form__fieldset {{fieldsetItem.class}}">
-					<legend class="{{fieldsetItem.legend.class}}">{{fieldsetItem.legend.text}}</legend>
-					{% for itemInputs in fieldsetItem.inputs %}
-						{% if fieldsetItem.textPosition == "top" %}
-							<div class="feedback-form__user-contacts-wrapper">
-								{{
-									mixins.input({
-										label: itemInputs.label,
-										input: itemInputs.input,
-										textPosition: fieldsetItem.textPosition
-									})
-								}}											
+<form class="feedback-form" action="test.php">
+	<ul class="feedback-form__list">
+		{% for fieldsetItem in fieldsets %}
+			<li class="feedback-form__list-item">
+				<fieldset class="{{ fieldsetItem.class }}">
+					<legend class="{{ fieldsetItem.legend.class }}">
+						{{ fieldsetItem.legend.text }}
+					</legend>
+					{% for fieldData in fieldsetItem.inputs %}
+						{% if fieldsetItem.typeFields == "text" %}
+							<div class="feedback-form__field-wrapper">
+								{{mixins.label(fieldData.label)}}
+								{{mixins.input(fieldData.input)}}
 							</div>
-						{% else %}
+						{% elif fieldsetItem.typeFields == "contacts" %}
+							{{mixins.label(fieldData.label)}}
+							<div class="feedback-form__field-wrapper">
+								{{mixins.input(fieldData.input)}}
+								{{mixins.icon(fieldData.input.icon)}}
+							</div>
+						{% elif fieldsetItem.typeFields == "checkbox-radio" %}
 							{{
-								mixins.input({
-									label: itemInputs.label,
-									input: itemInputs.input,
-									textPosition: fieldsetItem.textPosition
+								mixins.label({
+									class: fieldData.label.class,
+									for: fieldData.label.for,
+									text: fieldData.label.text,
+									input: fieldData.input,
+									icon: fieldData.input.icon
 								})
-							}}					
+							}}
+						{% else %}
+							{{mixins.input(fieldData.input)}}
 						{% endif %}
 					{% endfor %}
 				</fieldset>
-			</div>
+			</li>
 		{% endfor %}
-		<button class="feedback-form__submit button">
-			{{data.btnSubmitText}}
+	</ul>
+	<div class="feedback__submit-wrapper">
+		<button class="feedback__submit button">
+			{{btnSubmitText}}
 		</button>
-	</form>
-
-</section>
-
-{# inputs: [
-			{
-				label: {
-					text: "",
-					for: "",
-					class: ""
-				},
-				input: {
-					id: "",
-					name: "",
-					placeholder: "",
-					type: "text",
-					pattern: "",
-					required: "required",
-					minlength: "1",
-					maxlength: "6",
-					value: "1",
-					min:"1",
-					max:"10",
- 
-					icon: {
-						type: "css",
-						class: "",
-						width: 10,
-						height: 10
-				 }
-				}
-			} 
-		] #}
-
-{#
-\d [0-9]	Одна цифра от 0 до 9.
-\D [^0-9]	Любой символ кроме цифры.
-\s	Пробел.
-[A-Z]	Только заглавная латинская буква.
-[A-Za-z]	Только латинская буква в любом регистре.
-[А-Яа-яЁё]	Только русская буква в любом регистре.
-[A-Za-zА-Яа-яЁё]	Любая буква русского и латинского алфавита.
-[0-9]{3}	Три цифры.
-[A-Za-z]{6,}	Не менее шести латинских букв.
-[0-9]{,3}	Не более трёх цифр.
-[0-9]{5,10}	От пяти до десяти цифр.
-^[a-zA-Z]+$	Любое слово на латинице.
-^[А-Яа-яЁё\s]+$	Любое слово на русском включая пробелы.
-^[ 0-9]+$	Любое число.
-[0-9]{6}	Почтовый индекс.
-\d+(,\d{2})?	Число в формате 1,34 (разделитель запятая).
-\d+(\.\d{2})?	Число в формате 2.10 (разделитель точка).
-\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}	IP-адрес
-#}
+		<span class="feedback__required-fields-text">
+			{{requiredFieldsText}}
+		</span>
+	</div>
+</form>

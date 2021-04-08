@@ -1,0 +1,21 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{%
+	set data = {
+		sectionClass: "feedback",
+		sectionTitle: "Оставьте свой отзыв",
+		sectionText: "Помогите нашим отелям стать лучше! оставьте отзыв о них,а также о посещенных вами достопримечательностях"
+	}
+%}
+
+<section class={{ data.sectionClass }}>
+	<h1 class="feedback__title">
+		{{data.sectionTitle}}
+	</h1>
+	<p class="feedback__text">
+		{{data.sectionText}}
+	</p>
+
+	<h2 class="visually-hidden">Форма обратной связи</h2>
+	{% include "../../blocks/feedback-form/feedback-form.njk" %}
+</section>

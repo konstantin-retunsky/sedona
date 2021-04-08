@@ -1,0 +1,42 @@
+.feedback {
+	padding-top: 36px;
+	position: relative;
+	background-color: $white;
+
+	@include media-tablet {
+		padding-top: 70px;
+	}
+
+	@include media-desktop {
+		padding-top: 113px;
+	}
+}
+
+.feedback__title {
+	margin: 0;
+	margin-bottom: 35px;
+	font-size: $fs-18;
+	text-align: center;
+
+	@include media-tablet {
+		font-size: $fs-30;
+	}
+}
+
+.feedback__text {
+	max-width: 306px;
+	margin: 0 auto;
+	margin-bottom: 16px;
+	line-height: $lh-24;
+	color: $mine-shaft;
+	text-align: center;
+
+	@include media-tablet {
+		margin-bottom: 75px;
+		max-width: 435px;
+	}
+
+	@include media-desktop {
+		margin-bottom: 55px;
+	}
+}
