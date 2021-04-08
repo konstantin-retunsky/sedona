@@ -7,6 +7,7 @@ const cleanCSS = require('gulp-clean-css')
 const sourcemaps = require('gulp-sourcemaps')
 const autoprefixer = require('gulp-autoprefixer')
 const path = require('../pathTasks')
+var mmq = require('gulp-merge-media-queries');
 
 module.exports = function sytle(cb) {
   return src(path.src.styles)
@@ -18,6 +19,7 @@ module.exports = function sytle(cb) {
     }))
     .pipe(rename({dirname: ''}))
     .pipe(concat('style.css'))
+    .pipe(mmq())
     .pipe(sourcemaps.write())
     .pipe(dest(path.build.styles))
     .pipe(cleanCSS({

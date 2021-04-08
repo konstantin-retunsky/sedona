@@ -37,6 +37,7 @@
     "gulp-eslint": "^6.0.0",
     "gulp-html-bem-validator": "^1.0.5",
     "gulp-imagemin": "^7.1.0",
+    "gulp-merge-media-queries": "^0.2.1",
     "gulp-notify": "^3.2.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-plumber": "^1.2.1",
