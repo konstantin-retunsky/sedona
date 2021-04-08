@@ -55,7 +55,82 @@
 	</svg>
 {% endmacro %}
 
+
 {% macro input(args) %}
+	{% set tag = args.typeTag if args.typeTag else "input" %}
+
+	<{{ tag }}
+		{% if args.typeTag %} style="resize: none;" {% endif %}
+		{% if args.class %} class="{{ args.class }}"{% endif %}
+		{% if args.id %} id="{{ args.id }}"{% endif %}
+		{% if args.type %} type="{{ args.type }}"{% endif %}
+		{% if args.name %} name="{{ args.name }}"{% endif %}
+		{% if args.value %} value="{{ args.value }}"{% endif %}
+		{% if args.placeholder %} placeholder="{{ args.placeholder }}"{% endif %}
+		{% if args.pattern %} pattern="{{ args.pattern }}"{% endif %}
+		{% if args.minlength %} minlength="{{ args.minlength }}"{% endif %}
+		{% if args.maxlength %} maxlength="{{ args.maxlength }}"{% endif %}
+		{% if args.min %} min="{{ args.min }}"{% endif %}
+		{% if args.max %} max="{{ args.max }}"{% endif %}
+		{% if args.checked %} {{ args.checked }}{% endif %}
+		{% if args.disabled %} {{ args.disabled }}{% endif %}
+		{% if args.required %} {{ args.required }}{% endif %}>{% if tag == "textarea" %}</{{ tag }}>{% endif %}
+{% endmacro %}
+
+{% macro icon(args) %}
+	{% if args.type == "css" %}
+		<span
+			{% if args.class %} class="{{args.class}}"{% endif %}>
+		</span>
+	{% else %}
+		{{sprite({
+			name: args.name,
+			width: args.width,
+			height: args.height,
+			class: args.class
+		})}}
+	{% endif %}
+{% endmacro %}
+
+{% macro label(args) %}
+		<label
+			{% if args.class %} class="{{ args.class }}"{% endif %}
+			{% if args.for %} for="{{ args.for }}"{% endif %}>
+
+			{% if args.input %}
+				{{input({
+					class: args.input.class,
+					id: args.input.id,
+					type: args.input.type,
+					name: args.input.name,
+					value: args.input.value,
+					placeholder: args.input.placeholder,
+					pattern: args.input.pattern,
+					minlenght: args.input.minlenght,
+					maxlength: args.input.maxlength,
+					min: args.input.min,
+					max: args.input.max,
+					checked: args.input.checked,
+					disabled: args.input.disabled,
+					required: args.input.required
+				})}}
+			{% endif %}
+
+			{% if args.icon %}
+				{{icon({
+					type: args.icon.type,
+					name: args.icon.name,
+					width: args.icon.width,
+					height: args.icon.height,
+					class: args.icon.class
+				})}}
+			{% endif %}
+
+			{{ args.text }}
+		</label>
+{% endmacro %}
+
+{# {% macro input(args) %}
 	{% if args.input.type == "textarea" %}
 		<label
 			{% if args.label.class %} class="{{ args.label.class }}"{% endif %}
@@ -192,4 +267,4 @@
 	{% endif %}
 
 {% endmacro %}
-
+ #}
