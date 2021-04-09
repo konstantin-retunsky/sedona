@@ -2,14 +2,17 @@
 	position: relative;
 	z-index: 1;
 	padding-top: 36px;
+	padding-bottom: 48px;
 	background-color: $white;
 
 	@include media-tablet {
 		padding-top: 70px;
+		padding-bottom: 61px;
 	}
 
 	@include media-desktop {
 		padding-top: 113px;
+	padding-bottom: 66px;
 	}
 }
 

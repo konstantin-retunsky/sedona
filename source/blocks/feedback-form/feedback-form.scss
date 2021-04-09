@@ -1,15 +1,24 @@
 .feedback-form__list {
 	list-style: none;
 	margin: 0;
+	margin-bottom: 51px;
 	padding: 0;
+
+	@include media-tablet {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		max-width: 648px;
+		margin: 0 auto;
+	}
+
+	@include media-desktop {
+		min-width: 960px;
+	}
 }
 
 .feedback-form__list-item {
 	position: relative;
-	padding: 0 20px;
-
-	padding-top: 20px;
-	padding-bottom: 25px;
+	grid-column: 1;
 
 	&::after,
 	&::before {
@@ -28,6 +37,29 @@
 	&:not(:last-child)::after {
 		display: none;
 	}
+
+	@include media-tablet {
+		&:first-child {
+			grid-column-start: 2;
+			margin-bottom: 72px;
+		}
+
+		&:nth-child(3) {
+			grid-row-start: 1;
+			grid-column-start: 1;
+		}
+
+		&:nth-child(2),
+		&:nth-child(n + 4) {
+			grid-column-end: 3;
+			margin-bottom: 51px;
+		}
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
 }
 
 .feedback-form__fieldset {
@@ -35,13 +67,75 @@
 	flex-direction: column;
 	max-width: 371px;
 	margin: 0 auto;
-	padding: 0;
+	padding: 0 20px;
+	padding-top: 20px;
+	padding-bottom: 25px;
 	border: 0;
+
+	@include media-tablet {
+		max-width: 100%;
+		padding: 0;
+	}
+}
+
+.feedback-form__user-fullname {
+	@include media-tablet {
+		max-width: 266px;
+		margin-right: 0;
+	}
+
+	@include media-desktop {
+		min-width: 400px;
+	}
+}
+
+.feedback-form__user-contacts {
+	@include media-desktop {
+		display: flex;
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+}
+
+.feedback-form__user-checklist {
+	@include media-tablet {
+		display: grid;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		max-width: 484px;
+	}
+
+	@include media-desktop {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		max-width: 100%;
+	}
+}
+
+.feedback-form__user-comment .feedback-form__field-text {
+	box-sizing: border-box;
+	min-height: 160px;
+}
+
+.feedback-form__list-item:nth-child(1) .feedback-form__legend,
+.feedback-form__list-item:nth-child(3) .feedback-form__legend {
+	@include media-desktop {
+		text-align: left;
+		margin-left: 0;
+	}
+}
+
+.feedback-form__list-item:nth-child(3) .feedback-form__legend {
+	@include media-desktop {
+		margin-left: 80px;
+	}
 }
 
 .feedback-form__legend {
+	max-width: 303px;
 	margin: 0 auto;
 	margin-bottom: 19px;
+	text-align: center;
 	font-size: $fs-18;
 	font-weight: $fw-700;
 
@@ -58,11 +152,12 @@
 	align-items: center;
 
 	@include media-tablet {
-		margin-bottom: 20px;
+		margin-bottom: 27px;
 	}
 }
 
 .feedback-form__field-text {
+	text-overflow: ellipsis;
 	width: 100%;
 	padding: 18px 22px;
 	background-color: $concrete;
@@ -86,13 +181,25 @@
 	opacity: 1;
 }
 
-.feedback-form__user-fullname label {
+.feedback-form__user-fullname .feedback-form__text-label {
 	margin-right: 13px;
 }
 
-.feedback-form__user-contacts label {
+.feedback-form__user-contacts .feedback-form__text-label {
 	padding-left: 22px;
 	margin-bottom: 8px;
+
+	@include media-desktop {
+		padding-left: 0px;
+		margin-left: auto;
+		margin-right: 16px;
+	}
+}
+
+.feedback-form__user-phone {
+	@include media-desktop {
+		margin-left: 0;
+	}
 }
 
 .feedback-form__icon-wrapper {
@@ -107,60 +214,167 @@
 	background-color: $mercury-6;
 }
 
+.feedback__submit-wrapper {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	@include media-tablet {
+		max-width: 648px;
+		margin: 0 auto;
+		justify-content: space-between;
+	}
+
+	@include media-desktop {
+		max-width: 960px;
+	}
+}
+
+.feedback__required-fields-text {
+	display: none;
+
+	@include media-tablet {
+		display: inline-block;
+	}
+}
+
+.feedback__submit {
+	max-width: 280px;
+}
+
 /*
 	radio style
 */
 .feedback-form__radio-label {
+	font-size: $fs-18;
+	font-weight: $fw-700;
+	text-transform: initial;
 	position: relative;
 	display: inline-block;
-	padding-left: 74px;
 	margin-bottom: 41px;
 	cursor: pointer;
 }
 
+.feedback-form__input-checkbox,
 .feedback-form__input-radio {
-	display: none;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
 }
 
 .feedback-form__radio-icon {
-	position: absolute;
-	left: 0;
-	top: -12px;
+	display: inline-block;
 	width: 18px;
 	height: 18px;
+	margin-right: 26px;
+	vertical-align: middle;
 	border: 15px solid $concrete;
 	border-radius: 50%;
 	background-color: $concrete;
 	cursor: pointer;
+}
 
-	transition: background-color 0.5s;
-
-	&:focus .feedback-form__radio-icon,
+.feedback-form__radio-label {
 	&:hover .feedback-form__radio-icon {
+		border-color: $mercury-5;
 		background-color: $mercury-5;
 	}
+
+	&:active .feedback-form__radio-icon {
+		border-color: $alto-5;
+		background-color: rgba($mine-shaft, 0.3);
+	}
+
+	&:disabled .feedback-form__radio-icon {
+		border-color: $alto-5;
+		background-color: rgba($mine-shaft, 0.3);
+	}
+}
+
+.feedback-form__input-radio:checked:focus + .feedback-form__radio-icon {
+	border-color: $mercury-5;
 }
 
 .feedback-form__input-radio:checked + .feedback-form__radio-icon {
 	background-color: $mine-shaft;
 }
 
-// .check__input:checked + * .check__square {
-// 	fill: #4a90e2;
-// }
-
-// .check__input:focus + * .check__focus {
-// 	fill: #7ed321;
-// }
-
-// .check__input:disabled + * .check__square {
-// 	stroke: #9b9b9b;
-// }
-
-// .check__input:checked:disabled + * .check__square {
-// 	fill: #9b9b9b;
-// }
+/*
+radio style
+*/
 
 /*
-	radio style
+checkbox style
+*/
+
+.feedback-form__checkbox-label {
+	position: relative;
+	font-size: $fs-18;
+	font-weight: $fw-700;
+	text-transform: initial;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+
+.feedback-form__checkbox-icon {
+	position: relative;
+	display: inline-block;
+	margin-right: 29px;
+	vertical-align: middle;
+	background-color: $concrete;
+	width: 46px;
+	height: 46px;
+}
+
+.feedback-form__input-checkbox:checked + .feedback-form__checkbox-icon {
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 3px;
+		background-color: $mine-shaft;
+		border-radius: 10px;
+	}
+
+	&::before {
+		height: 13px;
+		left: 16px;
+		top: 19px;
+		transform: rotate(315deg);
+	}
+
+	&::after {
+		transform: rotate(45deg);
+		height: 21px;
+		right: 17px;
+		top: 12px;
+	}
+}
+
+.feedback-form__checkbox-label {
+	&:hover .feedback-form__checkbox-icon {
+		background-color: $mercury-5;
+	}
+
+	&:active .feedback-form__checkbox-icon {
+		background-color: $alto-5;
+
+		&::after,
+		&::before {
+			background-color: rgba($mine-shaft, 0.3);
+		}
+	}
+}
+
+.feedback-form__input-checkbox:focus + .feedback-form__checkbox-icon {
+	background-color: $mercury-5;
+}
+
+/*
+checkbox style
 */
