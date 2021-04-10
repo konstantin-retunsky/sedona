@@ -15,7 +15,7 @@ module.exports = function scripts() {
     // .pipe(eslint())
     // .pipe(eslint.format())
     .pipe(babel({
-      presets: ['@babel/env']
+      presets: ["@babel/preset-env"]
     }))
     .pipe(rename({dirname: ''}))
     .pipe(dest('build/js'))
