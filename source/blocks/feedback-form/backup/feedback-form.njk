@@ -1,0 +1,357 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{% set btnSubmitText = "Отправить отзыв" %}
+{% set requiredFieldsText = "* — обязательные поля" %}
+
+{%
+	set fieldsets = [
+		{
+			class: "feedback-form__fieldset feedback-form__user-fullname",
+			legend: {
+				text: "Представьтесь:",
+				class: "feedback-form__legend"
+			},
+			typeFields: "text",
+			inputs: [
+				{
+					label: {
+						text: "ИМЯ*:",
+						for: "input__user-name",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__user-name",
+						name: "user-name",
+						placeholder: "Введите ваше имя",
+						type: "text",
+						pattern: "[A-Za-zА-Яа-яЁё]{1,}",
+						required: "required"
+					}
+				}, 
+				{
+					label: {
+						text: "ФАМИЛИЯ*:",
+						for: "input__last-name",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__last-name",
+						name: "last-name",
+						placeholder: "Введите вашу фамилию",
+						type: "text",
+						pattern: "[A-Za-zА-Яа-яЁё]{1,}",
+						required: "required"
+					}
+				},
+				{
+					label: {
+						text: "Отчество:",
+						for: "input__second-name",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__second-name",
+						name: "second-name",
+						placeholder: "Введите ваше отчество",
+						type: "text",
+						pattern: "[A-Za-zА-Яа-яЁё]*"
+					}
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-contacts",
+			textPosition: "top",
+			typeFields: "contacts",
+			legend: {
+				text: "Контактная информация:",
+				class: "feedback-form__legend"
+			},
+			inputs: [
+				{
+					label: {
+						text: "Контактный телефон*:",
+						for: "input__user-phone",
+						class: "feedback-form__text-label feedback-form__user-phone"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__user-phone",
+						name: "user-phone",
+						placeholder: "Введите ваш телефон",
+						type: "tel",
+						pattern: "\d+",
+						required: "required",
+
+						icon: {
+							wrapperClass: "feedback-form__icon-wrapper",
+							type: "svg",
+							name: "icon-phone",
+							width: 18,
+							height: 18
+						}
+					}
+				}, 
+				{
+					label: {
+						text: "Электронная почта*:",
+						for: "input__user-email",
+						class: "feedback-form__text-label"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						id: "input__user-email",
+						name: "user-email",
+						placeholder: "Введите e-mail",
+						type: "email",
+						pattern: "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$",
+						required: "required",
+
+						icon: {
+							wrapperClass: "feedback-form__icon-wrapper",
+							type: "svg",
+							name: "icon-email",
+							width: 16,
+							height: 12
+						}
+					}
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-impressions",
+			legend: {
+				text: "Ваше общее впечатление:",
+				class: "feedback-form__legend"
+			},
+			textPosition: "right",
+			typeFields: "checkbox-radio",
+			inputs: [
+				{
+					label: {
+						text: "Скорее положительное",
+						for: "radio__impression-good",
+						class: "feedback-form__radio-label"
+					},
+					input: {
+						class: "feedback-form__input-radio",
+						id: "radio__impression-good",
+						name: "impression",
+						type: "radio",
+						required: "required",
+						checked: "checked",
+						value: "good",
+
+						icon: {
+							type: "css",
+							class: "feedback-form__radio-icon"
+						}
+					}
+				}, 
+				{
+					label: {
+						text: "Скорее отрицательное",
+						for: "radio__impression-bad",
+						class: "feedback-form__radio-label"
+					},
+					input: {
+						class: "feedback-form__input-radio",
+						id: "radio__impression-bad",
+						name: "impression",
+						type: "radio",
+						required: "required",
+						value: "bad",
+
+						icon: {
+							class: "feedback-form__radio-icon",
+							type: "css"
+						}
+					}
+				},
+				{
+					label: {
+						text: "Затрудняюсь ответить",
+						for: "radio__impression-unknown",
+						class: "feedback-form__radio-label"
+					},
+					input: {
+						class: "feedback-form__input-radio",
+						id: "radio__impression-unknown",
+						name: "impression",
+						type: "radio",
+						required: "required",
+						checked: "checked",
+						value: "unknown",
+
+						icon: {
+							class: "feedback-form__radio-icon",
+							type: "css"
+						}
+					}
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-checklist",
+			legend: {
+				text: "Посещенные достопримечательности:",
+				class: "feedback-form__legend"
+			},
+			textPosition: "right",
+			typeFields: "checkbox-radio",
+			inputs: [
+				{
+					label: {
+						text: "Мост Дьявола",
+						for: "checkbox__checklist-devils-bridge",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						class: "feedback-form__input-checkbox",
+						id: "checkbox__checklist-devils-bridge",
+						name: "devils-bridge",
+						type: "checkbox",
+						checked: "checked",
+						value: "devils-bridge",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				}, 
+				{
+					label: {
+						text: "Гора-Колокол",
+						for: "checkbox__checklist-mountain-bell",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						class: "feedback-form__input-checkbox",
+						id: "checkbox__checklist-mountain-bell",
+						name: "mountain-bell",
+						type: "checkbox",
+						checked: "checked",
+						value: "mountain-bell",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				},
+				{
+					label: {
+						text: "Слайд-парк",
+						for: "checkbox__checklist-slide-park",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						class: "feedback-form__input-checkbox",
+						id: "checkbox__checklist-slide-park",
+						name: "slide-park",
+						type: "checkbox",
+						value: "slide-park",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				},
+				{
+					label: {
+						text: "Красные скалы",
+						for: "checkbox__checklist-red-rocks",
+						class: "feedback-form__checkbox-label"
+					},
+					input: {
+						class: "feedback-form__input-checkbox",
+						id: "checkbox__checklist-red-rocks",
+						name: "red-rocks",
+						type: "checkbox",
+						value: "red-rocks",
+
+						icon: {
+							class: "feedback-form__checkbox-icon",
+							type: "css"
+						}
+					}
+				}
+			]
+		},
+		{
+			class: "feedback-form__fieldset feedback-form__user-comment",
+			legend: {
+				text: "Опишите свои эмоции:",
+				class: "feedback-form__legend"
+			},
+			inputs: [
+				{
+					label: {
+						for: "textarea-comment",
+						class: "visually-hidden"
+					},
+					input: {
+						class: "feedback-form__field-text",
+						typeTag: "textarea",
+						id: "textarea-comment",
+						name: "user-comment",
+						placeholder: "Опишите подробно все свои восторги"
+					}
+				} 
+			]
+		}
+	]
+%}
+
+<form class="feedback-form" action="test.php">
+	<ul class="feedback-form__list">
+		{% for fieldsetItem in fieldsets %}
+			<li class="feedback-form__list-item">
+				<fieldset class="{{ fieldsetItem.class }}">
+					<legend class="{{ fieldsetItem.legend.class }}">
+						{{ fieldsetItem.legend.text }}
+					</legend>
+					{% for fieldData in fieldsetItem.inputs %}
+						{% if fieldsetItem.typeFields == "text" %}
+							<div class="feedback-form__field-wrapper">
+								{{mixins.label(fieldData.label)}}
+								{{mixins.input(fieldData.input)}}
+							</div>
+						{% elif fieldsetItem.typeFields == "contacts" %}
+							{{mixins.label(fieldData.label)}}
+							<div class="feedback-form__field-wrapper">
+								{{mixins.input(fieldData.input)}}
+								{{mixins.icon(fieldData.input.icon)}}
+							</div>
+						{% elif fieldsetItem.typeFields == "checkbox-radio" %}
+							{{
+								mixins.label({
+									class: fieldData.label.class,
+									for: fieldData.label.for,
+									text: fieldData.label.text,
+									input: fieldData.input,
+									icon: fieldData.input.icon
+								})
+							}}
+						{% else %}
+							{{mixins.input(fieldData.input)}}
+						{% endif %}
+					{% endfor %}
+				</fieldset>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="feedback__submit-wrapper">
+		<button class="feedback__submit button">
+			{{btnSubmitText}}
+		</button>
+		<span class="feedback__required-fields-text">
+			{{requiredFieldsText}}
+		</span>
+	</div>
+</form>
