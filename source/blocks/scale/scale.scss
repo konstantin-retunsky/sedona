@@ -1,0 +1,24 @@
+.scale {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+  box-sizing: border-box;
+}
+
+.scale__line {
+	position: relative;
+	width: 100%;
+}
+
+.scale__controller {
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 13px;
+	height: 13px;
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+}

@@ -1,0 +1,40 @@
+
+
+.video {
+  text-align: center;
+	padding-bottom: 115px;
+
+	@include media-tablet {
+		margin-bottom: 40px;
+	}
+
+	@include media-desktop {
+		margin-bottom: 85px;
+	}
+}
+
+.video__title {
+  display: block;
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: $fs-18;
+
+  @include media-tablet {
+    margin-bottom: 35px;
+    font-size: $fs-30;
+  }
+}
+
+.video__text {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 40px;
+  max-width: 280px;
+  line-height: $lh-24;
+  color: $mine-shaft;
+
+  @include media-tablet {
+    max-width: 450px;
+    margin-bottom: 80px;
+  }
+}

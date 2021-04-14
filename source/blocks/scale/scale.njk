@@ -1,0 +1,12 @@
+
+
+
+
+{% macro value(args) %}
+ <div class="scale {{args.class}}">
+    <div class="scale__line {{ args.lineClass }}">
+      <button class="scale__controller {{ args.controllerClass }}" aria-label="{{ args.ariaLabel }}"></button>
+    </div>
+  </div> 
+{% endmacro %}
+

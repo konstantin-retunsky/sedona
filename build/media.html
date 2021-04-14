@@ -491,6 +491,98 @@
 
     
 
+<section class="video">
+  <h2 class="visually-hidden">Видео городка Седона</h2>
+  <b class="video__title">
+    Все еще сомневаетесь?
+  </b>
+  <p class="video__text">
+    Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!
+  </p>
+
+  
+
+
+
+
+<aside class="video-player">
+  
+	<picture>
+		
+			
+				
+					<source
+						type="image/webp"
+						media="(min-width: 768px)"
+						srcset="img/video-preview-768px.webp 1x,
+										img/video-preview-768px@2x.webp 2x">
+					<source
+						media="(min-width: 768px)"
+						srcset="img/video-preview-768px.jpg 1x,
+										img/video-preview-768px@2x.jpg 2x">
+				
+			
+				
+					<source
+						media="(min-width: 0)"
+						srcset="img/video-preview-320px.webp 1x,
+										img/video-preview-320px@2x.webp 2x">
+					<img
+						class="video-player__preview-img"
+						src="img/video-preview-320px.jpg"
+						srcset="img/video-preview-320px.jpg 1x,
+									jimg/video-preview-320px@2x.jpg 2x"
+						alt="предпоказ видео"
+						width="320"
+						height="201">
+				
+			
+		
+	</picture>
+
+  <div class="video-player__controls">
+    <button class="video-player__button-replay video-player__button">
+      
+	<svg
+		 class="video-player__replay-icon video-player__icon"
+		 width="16"
+		 height="20">
+		<use xlink:href="img/sprite.svg#icon-replay"></use>
+	</svg>
+
+    </button>
+    
+ <div class="scale video-player__scale">
+    <div class="scale__line video-player__scale-line">
+      <button class="scale__controller video-player__scale-controller" aria-label="Ползунок видео"></button>
+    </div>
+  </div> 
+
+    <button class="video-player__button-replay video-player__button">
+      
+	<svg
+		 class="video-player__subtitles-icon video-player__icon"
+		 width="32"
+		 height="20">
+		<use xlink:href="img/sprite.svg#icon-subtitles"></use>
+	</svg>
+
+    </button>
+    <button class="video-player__button-full-screen video-player__button">
+      
+	<svg
+		 class="video-player__full-screen-icon video-player__icon"
+		 width="32"
+		 height="20">
+		<use xlink:href="img/sprite.svg#icon-fullscreen"></use>
+	</svg>
+
+    </button>
+    <div class="video-player__controls-wrapper"></div>
+  </div>
+
+</aside>
+</section>
   </main>
 
 

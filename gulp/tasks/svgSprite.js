@@ -13,7 +13,8 @@ module.exports = function svgSprite() {
       imagemin.svgo({
         plugins: [
             {removeViewBox: true},
-            {cleanupIDs: false}
+            {cleanupIDs: false},
+            { removeAttrs: {attrs: '(stroke|fill)'} },
         ]
       })
     ]))

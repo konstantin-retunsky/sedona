@@ -1,5 +1,18 @@
-{# data = [
-    {
-    "text": "Все еще сомневаетесь?Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!"
-  },
-] #}
+{%
+  set data = {
+    sectionTitle: "Все еще сомневаетесь?",
+    sectionText: "Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!"
+  }
+%}
+
+<section class="video">
+  <h2 class="visually-hidden">Видео городка Седона</h2>
+  <b class="video__title">
+    {{ data.sectionTitle }}
+  </b>
+  <p class="video__text">
+    {{ data.sectionText }}
+  </p>
+
+  {% include "blocks/video-player/video-player.njk" %}
+</section>

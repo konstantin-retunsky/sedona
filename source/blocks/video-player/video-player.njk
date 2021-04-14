@@ -1,0 +1,76 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/scale/scale.njk" as scale %}
+
+{%
+  set data = {
+    previewImg: {
+      class: "video-player__preview-img",
+      width: "320",
+      height: "201",
+      src: "img/video-preview",
+      alt: "предпоказ видео",
+      media: ['768px', '320px'],
+      type: 'raster'
+    },
+    buttonReplay: {
+      class: "video-player__button-replay video-player__button",
+      icon: {
+        class: "video-player__replay-icon video-player__icon",
+        width: "16",
+        height: "20",
+        name: "icon-replay"
+      }
+    },
+    buttonSubtitles: {
+      class: "video-player__button-replay video-player__button",
+      icon: {
+        class: "video-player__subtitles-icon video-player__icon",
+        width: "32",
+        height: "20",
+        name: "icon-subtitles"
+      }
+    },
+    buttonFullScreen: {
+      class: "video-player__button-full-screen video-player__button",
+      icon: {
+        class: "video-player__full-screen-icon video-player__icon",
+        width: "32",
+        height: "20",
+        name: "icon-fullscreen"
+      }
+    }
+  }
+%}
+
+<aside class="video-player">
+  {{
+    mixins.img(data.previewImg)
+  }}
+  <div class="video-player__controls">
+    <button class="{{ data.buttonReplay.class }}">
+      {{
+        mixins.sprite(data.buttonReplay.icon)
+      }}
+    </button>
+    {{
+      scale.value({
+        class: "video-player__scale",
+        lineClass:  "video-player__scale-line",
+        controllerClass:  "video-player__scale-controller",
+        ariaLabel: "Ползунок видео"
+      })
+    }}
+    <button class="{{ data.buttonSubtitles.class }}">
+      {{
+        mixins.sprite(data.buttonSubtitles.icon)
+      }}
+    </button>
+    <button class="{{ data.buttonFullScreen.class }}">
+      {{
+        mixins.sprite(data.buttonFullScreen.icon)
+      }}
+    </button>
+    <div class="video-player__controls-wrapper"></div>
+  </div>
+
+</aside>
