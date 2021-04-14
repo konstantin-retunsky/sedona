@@ -45,6 +45,10 @@
 		width: 46px;
 		height: 48px;
 		padding: 0;
+
+		svg {
+			fill: $white;
+		}
 	}
 
 	&:not(:last-child) {
