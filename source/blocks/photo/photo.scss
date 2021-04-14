@@ -1,0 +1,171 @@
+.photo__list {
+	display: grid;
+	margin: 0 auto;
+	margin-bottom: 32px;
+	padding: 0 20px;
+	max-width: 440px;
+	list-style: none;
+	grid-template-columns: 1fr;
+
+	@include media-tablet {
+		grid-template-columns: 1fr 1fr;
+		max-width: 648px;
+		margin-bottom: 59px;
+	}
+
+	@include media-desktop {
+		grid-template-columns: 1fr 1fr 1fr;
+		max-width: 1200px;
+		margin-bottom: 63px;
+	}
+}
+
+.photo__list-item {
+	position: relative;
+	padding-top: 23px;
+	padding-bottom: 15px;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		width: 1200px;
+		left: -600px;
+		height: 1px;
+		background-color: $alto-5;
+	}
+
+	&::after {
+		top: 0;
+	}
+
+	&::before {
+		bottom: 0;
+	}
+
+	@include media-tablet {
+		padding-top: 0px;
+		padding-bottom: 0px;
+
+		&::after,
+		&::before {
+			display: none;
+		}
+
+		&:first-child {
+			grid-column-start: 1;
+			grid-column-end: 3;
+
+			.photo__picture {
+				height: 400px;
+			}
+		}
+	}
+
+	@include media-desktop {
+		&:first-child {
+			grid-column-start: 1;
+			grid-column-end: 4;
+		}
+	}
+}
+
+.photo__picture {
+	height: auto;
+}
+
+.photo__info-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-top: 11px;
+
+	@include media-tablet {
+		padding-top: 22px;
+		padding-bottom: 15px;
+		padding-left: 20px;
+		padding-right: 20px;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $concrete;
+	}
+
+	@include media-desktop {
+		position: absolute;
+		width: 100%;
+		box-sizing: border-box;
+		left: 0;
+		bottom: 0;
+		background-color: rgba($black, 0.3);
+	}
+}
+
+.photo__info-text-wrapper {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	margin-bottom: 10px;
+
+	@include media-tablet {
+		margin-bottom: 0px;
+	}
+}
+
+.photo__info-like-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.photo__like-button {
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		opacity: 0.5;
+	}
+
+	&:active {
+		opacity: 0.3;
+	}
+}
+
+.photo__icon-like {
+	margin-right: 14px;
+	fill: rgba($black, 0.3);
+
+	@include media-tablet {
+		margin-right: 9px;
+	}
+
+	@include media-desktop {
+		fill: $white;
+	}
+}
+
+.photo__name-photo {
+	line-height: $lh-24;
+
+	@include media-desktop {
+		color: $white;
+	}
+}
+
+.photo__author {
+	color: $mine-shaft;
+	line-height: $lh-24;
+	text-transform: initial;
+
+	@include media-desktop {
+		color: $white;
+	}
+}
+
+.photo__count-likes {
+	@include media-desktop {
+		color: $white;
+	}
+}

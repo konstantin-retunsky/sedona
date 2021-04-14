@@ -1,9 +1,25 @@
 {% extends "global/page/layout.njk" %}
 {% set title = "Фото и видео Sedona" %}
 {% set classPage = "inner" %}
+{%
+  set data = {
+    mainMediaTitle: "Фото и видео",
+    mainMediaText: "Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике." 
+  }
+%}
 
 
 {% block content %}
-  <main class="main">
+  <main class="main-media">
+    <h1 class="main-media__title">
+      {{ data.mainMediaTitle }}
+    </h1>
+    <p class="main-media__text">
+      {{ data.mainMediaText }}
+    </p>
+
+    {% include "blocks/photo/photo.njk" %}
+
+    {% include "blocks/video/video.njk" %}
   </main>
 {% endblock %}

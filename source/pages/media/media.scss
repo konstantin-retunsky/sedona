@@ -1,0 +1,48 @@
+@import "../../blocks/header/header.scss";
+
+@import "../../blocks/photo/photo.scss";
+
+@import "../../blocks/video/video.scss";
+
+@import "../../blocks/footer/footer.scss";
+
+.main-media {
+  position: relative;
+  z-index: 1;
+  padding-top: 24px;
+  text-align: center;
+  background-color: $white;
+
+  @include media-tablet {
+    padding-top: 59px;
+  }
+
+  @include media-desktop {
+    padding-top: 96px;
+  }
+}
+
+.main-media__title {
+  font-size: $fs-18;
+  margin: 0;
+  margin-bottom: 30px;
+
+  @include media-tablet {
+    margin-bottom: 35px;
+    font-size: $fs-30;
+  }
+}
+
+.main-media__text {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 40px;
+  max-width: 280px;
+  line-height: $lh-24;
+  color: $mine-shaft;
+
+  @include media-tablet {
+    max-width: 438px;
+    margin-bottom: 80px;
+  }
+}

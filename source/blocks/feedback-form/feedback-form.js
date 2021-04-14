@@ -47,8 +47,6 @@ class CustomValidationForm {
 	static checkValidity(input) {
 		let validity = input.validity
 		let inputType = input.type
-		console.log(validity)
-		console.log(inputType)
 
 		if (validity.patternMismatch) {
 			inputType in this._answers.patternMismatch

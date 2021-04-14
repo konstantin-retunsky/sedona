@@ -1,29 +1,86 @@
-data = [
-  {
-    "text": "Фото и видеоНе можете решиться на путешествие из-за курса?Фотографии помогут вам забыть о политике и экономике."
-  },
-  {
-    "text": "неродные просторыАвтор фото: Борис"
-  },
-  {
-    "text": "1350"
-  },
-  {
-    "text": "Местная растительностьАвтор фото: Сергей"
-  },
-  {
-    "text": "Дорога на северАвтор фото: Петр"
-  },
-  {
-    "text": "Мост дьяволаАвтор фото: Антон"
-  },
-  {
-    "text": "143"
-  },
-  {
-    "text": "96"
-  },
-  {
-    "text": "254"
-  },
-]
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{% 
+  set data = {
+    picture: {
+      class: "photo__picture",
+      width: "280",
+      height: "280",
+      media: ['1200px', '768px', '320px'],
+      type: 'raster'
+    },
+    sprite: {
+      class: "photo__icon-like",
+      width: "23",
+      height: "21",
+      name: "icon-like"
+    },
+    photoItems: [
+      {
+        namePhoto: "Неродные просторы",
+        author: "Борис",
+        countLikes: "1350",
+        photoSrc: "img/photo-1"
+      },
+      {
+        namePhoto: "Местная растительность",
+        author: "Сергей",
+        countLikes: "143",
+        photoSrc: "img/photo-2"
+      },
+      {
+        namePhoto: "Дорога на север",
+        author: "Петр",
+        countLikes: "96",
+        photoSrc: "img/photo-3"
+      },
+      {
+        namePhoto: "Мост дьявола",
+        author: "Антон",
+        countLikes: "254",
+        photoSrc: "img/photo-4"
+      }
+    ]
+  }
+%}
+
+<section class="photo">
+  <h2 class="visually-hidden">Фотографии Седоны</h2>
+  <ul class="photo__list">
+    {% for photoItem in data.photoItems %}
+      <li class="photo__list-item">
+        {{
+          mixins.img({
+            class: data.picture.class,
+            width: data.picture.width,
+            height: data.picture.height,
+            media: data.picture.media,
+            type: data.picture.type,
+            src: photoItem.photoSrc,
+            alt: photoItem.namePhoto
+          })
+        }}
+        <div class="photo__info-wrapper">
+          <div class="photo__info-text-wrapper">
+            <b class="photo__name-photo">
+              {{ photoItem.namePhoto }}
+            </b>
+            <span class="photo__author">
+              Автор фото: {{ photoItem.author }}
+            </span>
+          </div>
+          <div class="photo__info-like-wrapper">
+            <button class="photo__like-button">
+              {{
+                mixins.sprite( data.sprite )
+              }}
+            </button>
+            <b class="photo__count-likes">
+              {{ photoItem.countLikes }}
+            </b>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

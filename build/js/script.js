@@ -50,8 +50,6 @@ var CustomValidationForm = /*#__PURE__*/function () {
     value: function checkValidity(input) {
       var validity = input.validity;
       var inputType = input.type;
-      console.log(validity);
-      console.log(inputType);
 
       if (validity.patternMismatch) {
         inputType in this._answers.patternMismatch ? this._addInvalidity(this._answers.patternMismatch[inputType]) : this._addInvalidity(this._answers.patternMismatch["default"]);
